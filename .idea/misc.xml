@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_arrow_back.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_back.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_vector_49.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/splash_image.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_light.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_medium.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_thin.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_main.xml" value="0.1527777777777778" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_phone.xml" value="0.1527777777777778" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_smscode.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
