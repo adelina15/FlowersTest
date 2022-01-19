@@ -11,4 +11,5 @@
     <string name="_996_705_507_157">+996 705 507 157</string>
     <string name="btn_confirm">Подтвердить</string>
     <string name="send_again">Отправить снова</string>
+    <string name="incorrect_code">Incorrect code</string>
 </resources>

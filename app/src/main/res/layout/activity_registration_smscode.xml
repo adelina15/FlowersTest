@@ -67,26 +67,63 @@
         app:layout_constraintStart_toStartOf="@+id/tv_description"
         app:layout_constraintTop_toBottomOf="@+id/tv_description" />
 
+    <com.chaos.view.PinView
+        android:id="@+id/pinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:hideLineWhenFilled="true"
+        app:itemCount="4"
+        app:itemHeight="43dp"
+        app:itemRadius="10dp"
+        app:itemSpacing="30dp"
+        app:itemWidth="43dp"
+        app:lineColor="@color/pink"
+        app:lineWidth="1dp"
+        app:viewType="rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/tv_incorrectCode"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_incorrectCode"
+        app:layout_constraintTop_toBottomOf="@+id/tv_incorrectCode" />
+
+    <TextView
+        android:id="@+id/tv_incorrectCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/sf_pro_display"
+        android:text="@string/incorrect_code"
+        android:textColor="@color/pink"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_phoneNumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_phoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phoneNumber" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_next"
         android:layout_width="272dp"
         android:layout_height="43dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:fontFamily="@font/sf_pro_display"
         android:text="@string/btn_confirm"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_phoneNumber" />
+        app:layout_constraintEnd_toEndOf="@+id/pinView"
+        app:layout_constraintStart_toStartOf="@+id/pinView"
+        app:layout_constraintTop_toBottomOf="@+id/pinView" />
 
     <TextView
         android:id="@+id/tv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="97dp"
         android:clickable="true"
         android:focusable="true"
         android:fontFamily="@font/sf_pro_display"
