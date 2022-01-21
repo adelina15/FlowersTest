@@ -7,26 +7,14 @@
     tools:context=".RegistrationPhoneActivity">
 
     <ImageView
-        android:id="@+id/iv_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/imageView"
         android:layout_width="155dp"
         android:layout_height="151dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="85dp"
         android:src="@drawable/logo"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/iv_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +22,7 @@
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="118dp"
         android:fontFamily="@font/sf_pro_display"
         android:text="@string/login"
         android:textColor="@color/black"
@@ -61,16 +49,18 @@
         android:id="@+id/relativeLayout"
         android:layout_width="274dp"
         android:layout_height="44dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="41dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_description">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -80,6 +70,7 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
                     android:fontFamily="@font/sf_pro_display"
                     android:text="@string/_996"
                     android:textColor="@color/black"
@@ -94,14 +85,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:autoLink="phone"
+                    android:background="@android:color/transparent"
                     android:fontFamily="@font/sf_pro_display"
-                    android:hint="555666888"
-                    android:inputType="number"
+                    android:hint="******"
+                    android:paddingTop="10dp"
+                    android:inputType="phone"
                     android:textSize="20sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView"
                     app:layout_constraintStart_toEndOf="@+id/textView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -122,7 +115,7 @@
         android:id="@+id/tv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="67dp"
         android:clickable="true"
         android:focusable="true"
         android:fontFamily="@font/sf_pro_display"

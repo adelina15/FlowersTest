@@ -12,4 +12,9 @@
     <string name="btn_confirm">Подтвердить</string>
     <string name="send_again">Отправить снова</string>
     <string name="incorrect_code">Incorrect code</string>
+    <string name="home">Главная</string>
+    <string name="basket">Корзина</string>
+    <string name="catalog">Каталог</string>
+    <string name="favorites">Избранное</string>
+    <string name="more">Ещё</string>
 </resources>
