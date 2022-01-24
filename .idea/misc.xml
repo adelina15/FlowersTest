@@ -20,9 +20,14 @@
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_light.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_medium.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_thin.xml" value="0.19537037037037036" />
-        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_main.xml" value="0.1527777777777778" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_phone.xml" value="0.18" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_smscode.xml" value="0.25" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_basket.xml" value="0.1361111111111111" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_catalog.xml" value="0.1267361111111111" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_favorites.xml" value="0.1361111111111111" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_home.xml" value="0.1361111111111111" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_more.xml" value="0.1361111111111111" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/menu/navigation_menu.xml" value="0.20416666666666666" />
       </map>

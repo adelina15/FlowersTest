@@ -1,8 +1,11 @@
-package android.example.flowerschemistry
+package android.example.flowerschemistry.ui
 
+import android.app.Activity
 import android.example.flowerschemistry.databinding.ActivityRegistrationSmscodeBinding
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class RegistrationSmsCodeActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegistrationSmscodeBinding

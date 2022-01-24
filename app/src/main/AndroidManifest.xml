@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowersChemistry">
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
             <intent-filter>
@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistrationSmsCodeActivity"
+            android:name=".ui.RegistrationSmsCodeActivity"
             android:exported="true" />
         <activity
-            android:name=".RegistrationPhoneActivity"
+            android:name=".ui.RegistrationPhoneActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"/>
 
         <meta-data

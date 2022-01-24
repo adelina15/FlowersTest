@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.BasketFragment"
+        android:label="BasketFragment">
+        <action
+            android:id="@+id/action_basketFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.CatalogFragment"
+        android:label="CatalogFragment">
+        <action
+            android:id="@+id/action_catalogFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.FavoritesFragment"
+        android:label="FavoritesFragment">
+        <action
+            android:id="@+id/action_favoritesFragment_to_moreFragment"
+            app:destination="@id/moreFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.MoreFragment"
+        android:label="MoreFragment" />
+</navigation>

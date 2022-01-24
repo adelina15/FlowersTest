@@ -1,9 +1,12 @@
-package android.example.flowerschemistry
+package android.example.flowerschemistry.ui
 
 import android.content.Intent
+import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ActivityMainBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,5 +22,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegistrationPhoneActivity::class.java)
             startActivity(intent)
         }
+
+        binding.bottomNavigationView.setupWithNavController(findNavController(R.id.fragmentContainerView))
     }
 }

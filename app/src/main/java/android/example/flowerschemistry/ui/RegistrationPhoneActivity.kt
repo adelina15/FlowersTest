@@ -1,4 +1,4 @@
-package android.example.flowerschemistry
+package android.example.flowerschemistry.ui
 
 import android.content.Intent
 import android.example.flowerschemistry.databinding.ActivityRegistrationPhoneBinding
@@ -12,6 +12,7 @@ class RegistrationPhoneActivity : AppCompatActivity() {
         binding = ActivityRegistrationPhoneBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
 
         binding.btnNext.setOnClickListener {
             val intent = Intent(this, RegistrationSmsCodeActivity::class.java)
