@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.btn.setOnClickListener {
+       /* binding.btn.setOnClickListener {
             val intent = Intent(this, RegistrationPhoneActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         binding.bottomNavigationView.setupWithNavController(findNavController(R.id.fragmentContainerView))
     }

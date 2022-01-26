@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button.xml" value="0.19537037037037036" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/card_view1_background.xml" value="0.146875" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/cardview_backgraound.xml" value="0.2203125" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_arrow_back.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_back.xml" value="0.19537037037037036" />
@@ -16,6 +17,7 @@
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_more.xml" value="0.2203125" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_vector_49.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/logo_camomile.xml" value="0.2203125" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/search_view_background.xml" value="0.146875" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/splash_image.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_light.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_medium.xml" value="0.19537037037037036" />
@@ -26,7 +28,7 @@
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_basket.xml" value="0.1361111111111111" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_catalog.xml" value="0.1267361111111111" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_favorites.xml" value="0.1361111111111111" />
-        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_home.xml" value="0.1361111111111111" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_more.xml" value="0.1361111111111111" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/menu/navigation_menu.xml" value="0.20416666666666666" />
