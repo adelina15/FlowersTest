@@ -10,110 +10,753 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/start_guideline"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/end_guideline"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp"
-            />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
 
 
-        <TextView
-            android:id="@+id/tv_slogan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/slogan"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_slogan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/slogan"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/search_view_background"
-            android:iconifiedByDefault="false"
-            android:queryHint="@string/search"
-            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_slogan"
-            app:queryBackground="@null" />
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/search_view_background"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_slogan"
+        app:queryBackground="@null" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_discounts"
+        android:layout_width="0dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/searchView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_flowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="С женским днем"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="-20%"
+                android:textColor="@color/pink_dark"
+                android:textSize="48sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_txt"
+                app:layout_constraintTop_toBottomOf="@+id/tv_txt" />
+
+            <TextView
+                android:id="@+id/tv_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="На все тюльпаны"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_txt1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_txt1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="173dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/cv_discounts" />
+
+    <TextView
+        android:id="@+id/tv_recommended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Рекомендации"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/rv_category" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_bouquet"
+        android:layout_width="155dp"
+        android:layout_height="273dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="20dp"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_recommended">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_bouquet_recommended1"
+                android:layout_width="155dp"
+                android:layout_height="168dp"
+                android:src="@drawable/bouquet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_new"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="7dp"
+                android:src="@drawable/ic_favorites_red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_rating"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_recommended1"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_bouquet_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Букет осенний блюз"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_recommended1" />
+
+            <TextView
+                android:id="@+id/tv_bouquet_description1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Розы, ромашки, лилии"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name1"
+                app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/button_background_price"
+                android:text="999 сом"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description1"
+                app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="162dp"
+            android:id="@+id/cv_bouquet1"
+            android:layout_width="155dp"
+            android:layout_height="273dp"
             android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/blue"
             app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/searchView">
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_recommended">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/iv_flowers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baner"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/iv_bouquet_recommended2"
+                    android:layout_width="155dp"
+                    android:layout_height="168dp"
+                    android:src="@drawable/bouquet"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="С женским днем"
-                    android:textColor="@color/black"
-                    android:textSize="30sp"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tv_txt1"
+                <ImageView
+                    android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-20%"
-                    android:textColor="@color/pink_dark"
-                    android:textSize="50sp"
-                    app:layout_constraintStart_toStartOf="@+id/tv_txt"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_txt" />
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_new"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_favorites_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_recommended2"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_txt2"
+                    android:id="@+id/tv_bouquet_name2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="На все тюльпаны"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:layout_marginTop="7dp"
                     android:fontFamily="@font/roboto_medium"
-                    app:layout_constraintStart_toStartOf="@+id/tv_txt1"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_txt1" />
+                    android:text="Букет осенний блюз"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_recommended2" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_description2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Розы, ромашки, лилии"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name2"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name2" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="144dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/button_background_price"
+                    android:text="999 сом"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description2"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category2"
+            android:layout_width="wrap_content"
+            android:layout_height="176dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/cv_bouquet" />
+
+        <TextView
+            android:id="@+id/tv_discounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Скидки"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/rv_category2" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bouquet3"
+            android:layout_width="155dp"
+            android:layout_height="273dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_discounts">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_bouquet_discounts"
+                    android:layout_width="155dp"
+                    android:layout_height="168dp"
+                    android:src="@drawable/bouquet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_discounts_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_favorites_white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_discounts"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_name3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Букет осенний блюз"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_discounts" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_description3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Розы, ромашки, лилии"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name3"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name3" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="144dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/button_background_price"
+                    android:text="999 сом"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description3"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description3" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bouquet4"
+            android:layout_width="155dp"
+            android:layout_height="273dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_discounts">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_bouquet_discounts2"
+                    android:layout_width="155dp"
+                    android:layout_height="168dp"
+                    android:src="@drawable/bouquet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_discounts_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_favorites_white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_discounts2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_name4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Букет осенний блюз"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_discounts2" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_description4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Розы, ромашки, лилии"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name4"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name4" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="144dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/button_background_price"
+                    android:text="999 сом"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description4"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category3"
+            android:layout_width="wrap_content"
+            android:layout_height="173dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/cv_bouquet3" />
+
+
+        <TextView
+            android:id="@+id/tv_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Популярные"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/rv_category3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bouquet5"
+            android:layout_width="155dp"
+            android:layout_height="273dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_popular">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_bouquet_popular"
+                    android:layout_width="155dp"
+                    android:layout_height="168dp"
+                    android:src="@drawable/bouquet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_new"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_favorites_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_popular"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_name6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Букет осенний блюз"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_popular" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_description6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Розы, ромашки, лилии"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name6"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name6"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name6" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="144dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/button_background_price"
+                    android:text="999 сом"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description6"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description6"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bouquet6"
+            android:layout_width="155dp"
+            android:layout_height="273dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_popular">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_bouquet_popular1"
+                    android:layout_width="155dp"
+                    android:layout_height="168dp"
+                    android:src="@drawable/bouquet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_new"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_favorites_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_popular1"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_name7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Букет осенний блюз"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_popular1" />
+
+                <TextView
+                    android:id="@+id/tv_bouquet_description7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Розы, ромашки, лилии"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name7"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name7"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name7" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="144dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/button_background_price"
+                    android:text="999 сом"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description7"
+                    app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description7"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Перейти в каталог"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cv_bouquet5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
+
+
