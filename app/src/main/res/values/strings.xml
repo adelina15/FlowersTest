@@ -6,12 +6,12 @@
     <string name="_996">+996</string>
     <string name="next">Далее</string>
     <string name="skip">Пропустить</string>
-    <string name="tv_sms">Sms код</string>
+    <string name="tv_sms">Смс код</string>
     <string name="tv_send_number">Мы отправили код на номер:</string>
     <string name="_996_705_507_157">+996 705 507 157</string>
     <string name="btn_confirm">Подтвердить</string>
     <string name="send_again">Отправить снова</string>
-    <string name="incorrect_code">Incorrect code</string>
+    <string name="incorrect_code">Неверный код</string>
     <string name="home">Главная</string>
     <string name="basket">Корзина</string>
     <string name="catalog">Каталог</string>

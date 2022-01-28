@@ -10,7 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CardsAdapter: RecyclerView.Adapter<CardsAdapter.CardsViewHolder>() {
 
-    val cardsList = ArrayList<Card>()
+    private var list = mutableListOf<Card>()
+
+    fun setList(list: MutableList<Card>){
+        this.list = list
+    }
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = ItemCardBinding.bind(item)
@@ -26,11 +30,11 @@ class CardsAdapter: RecyclerView.Adapter<CardsAdapter.CardsViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CardsViewHolder, position: Int) {
-        holder.bind(cardsList[position])
+        holder.bind(list[position])
     }
 
     override fun getItemCount(): Int {
-        return cardsList.size
+        return list.size
     }
 }
 
