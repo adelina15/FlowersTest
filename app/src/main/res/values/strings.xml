@@ -20,5 +20,11 @@
     <string name="slogan">Букеты цветов на любой случай</string>
     <string name="search">Search</string>
     <string name="_999">999 сом</string>
+    <string name="extra">Дополнительно</string>
+    <string name="profile">Профиль</string>
+    <string name="history_order">История заказов</string>
+    <string name="contacts">Наши контакты</string>
+    <string name="about_us">О нас</string>
+    <string name="exit">Выход</string>
 
 </resources>
