@@ -13,4 +13,5 @@
     <color name="blue">#B6F2E5</color>
     <color name="pink_dark">#C11F96</color>
     <color name="yellow">#F7CC05</color>
+    <color name="text_color">#CCCCCC</color>
 </resources>

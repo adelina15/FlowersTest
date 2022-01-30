@@ -1,14 +1,15 @@
 package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
-import android.example.flowerschemistry.databinding.ItemCardBinding
+import android.example.flowerschemistry.databinding.ItemCardFirstRowBinding
+import android.example.flowerschemistry.databinding.ItemCardSecondRowBinding
 import android.example.flowerschemistry.models.Card
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class CardsAdapter: RecyclerView.Adapter<CardsAdapter.CardsViewHolder>() {
+class CardsSecondRowAdapter: RecyclerView.Adapter<CardsSecondRowAdapter.CardsViewHolder>() {
 
     private var list = mutableListOf<Card>()
 
@@ -17,7 +18,7 @@ class CardsAdapter: RecyclerView.Adapter<CardsAdapter.CardsViewHolder>() {
     }
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){
-        val binding = ItemCardBinding.bind(item)
+        val binding = ItemCardSecondRowBinding.bind(item)
         fun bind(card: Card) = with(binding){
             ivCard.setImageResource(card.img)
             tvCard.text = card.title
@@ -25,7 +26,7 @@ class CardsAdapter: RecyclerView.Adapter<CardsAdapter.CardsViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card_second_row, parent, false)
         return CardsViewHolder(view)
     }
 
@@ -37,4 +38,3 @@ class CardsAdapter: RecyclerView.Adapter<CardsAdapter.CardsViewHolder>() {
         return list.size
     }
 }
-
