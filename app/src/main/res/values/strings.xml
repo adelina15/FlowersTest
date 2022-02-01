@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FlowersChemistry</string>
     <string name="back">Назад</string>
-    <string name="login">Авторизоваться</string>
+    <string name="login">Войти</string>
     <string name="input_number">Введите свой номер телефона</string>
     <string name="_996">+996</string>
     <string name="next">Далее</string>
@@ -25,6 +25,13 @@
     <string name="history_order">История заказов</string>
     <string name="contacts">Наши контакты</string>
     <string name="about_us">О нас</string>
-    <string name="exit">Выход</string>
+    <string name="exit">Выйти</string>
+    <string name="women_day">С женским днем</string>
+    <string name="_20">-20%</string>
+    <string name="recommended">Рекомендации</string>
+    <string name="registration">Зарегистрироваться</string>
+    <string name="registrate">Регистрация</string>
+    <string name="reg">Регистрация</string>
+    <string name="name">Имя</string>
 
 </resources>

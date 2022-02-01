@@ -14,6 +14,7 @@ class CardsThirdRowAdapter: RecyclerView.Adapter<CardsThirdRowAdapter.CardsViewH
 
     fun setList(list: MutableList<Card>){
         this.list = list
+        notifyDataSetChanged()
     }
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){

@@ -1,6 +1,5 @@
 package android.example.flowerschemistry.ui
 
-import android.content.Intent
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ActivityMainBinding
 import androidx.appcompat.app.AppCompatActivity

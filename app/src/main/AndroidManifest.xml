@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowersChemistry">
         <activity
+            android:name=".ui.RegistrationSmsCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.RegistrationPhoneActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
@@ -20,19 +26,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.RegistrationSmsCodeActivity"
+            android:name=".ui.AuthorizationSmsCodeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.RegistrationPhoneActivity"
+            android:name=".ui.AuthorizationPhoneActivity"
             android:exported="true" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

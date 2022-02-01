@@ -13,11 +13,6 @@ class RegistrationPhoneActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.tvSkip.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.btnNext.setOnClickListener {
             val intent = Intent(this, RegistrationSmsCodeActivity::class.java)
             startActivity(intent)

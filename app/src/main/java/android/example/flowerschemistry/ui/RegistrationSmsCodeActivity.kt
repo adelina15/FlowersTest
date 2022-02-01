@@ -1,24 +1,20 @@
 package android.example.flowerschemistry.ui
 
-import android.app.Activity
 import android.content.Intent
-import android.example.flowerschemistry.databinding.ActivityRegistrationSmscodeBinding
-import android.os.Build
+import android.example.flowerschemistry.databinding.ActivityRegistrationSmsCodeBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 
 class RegistrationSmsCodeActivity : AppCompatActivity() {
-    lateinit var binding: ActivityRegistrationSmscodeBinding
+    lateinit var binding: ActivityRegistrationSmsCodeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegistrationSmscodeBinding.inflate(layoutInflater)
+        binding = ActivityRegistrationSmsCodeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         binding.linearLayoutBack.setOnClickListener {
             val intent = Intent(this, RegistrationPhoneActivity::class.java)
             startActivity(intent) }
-
     }
 }
