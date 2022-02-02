@@ -2,6 +2,8 @@ package android.example.flowerschemistry.ui.fragments
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentHomeBinding
+import android.example.flowerschemistry.models.BouquetDiscounts
+import android.example.flowerschemistry.models.BouquetPopular
 import android.example.flowerschemistry.models.BouquetRecommendation
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,10 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.models.Card
-import android.example.flowerschemistry.ui.adapters.BouquetRecommendationAdapter
-import android.example.flowerschemistry.ui.adapters.CardsFirstRowAdapter
-import android.example.flowerschemistry.ui.adapters.CardsSecondRowAdapter
-import android.example.flowerschemistry.ui.adapters.CardsThirdRowAdapter
+import android.example.flowerschemistry.ui.adapters.*
 import androidx.recyclerview.widget.LinearLayoutManager
 
 class HomeFragment : Fragment() {
@@ -22,6 +21,8 @@ class HomeFragment : Fragment() {
     private val adapterSecondRow by lazy{ CardsSecondRowAdapter() }
     private val adapterThirdRow by lazy{ CardsThirdRowAdapter() }
     private val adapterBouquetRecommendationAdapter by lazy {BouquetRecommendationAdapter()}
+    private val adapterBouquetDiscountsAdapter by lazy {BouquetDiscountsAdapter()}
+    private val adapterBouquetPopularAdapter by lazy {BouquetPopularAdapter()}
     private val itemListFirstRow by lazy{
         mutableListOf(
             Card(1, "Для день рождения", R.drawable.card1),
@@ -51,6 +52,22 @@ class HomeFragment : Fragment() {
         )
     }
 
+    private val itemListBouquetDiscounts by lazy {
+        mutableListOf(
+            BouquetDiscounts(1, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
+            BouquetDiscounts(2, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
+            BouquetDiscounts(3, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999)
+        )
+    }
+
+    private val itemListBouquetPopular by lazy {
+        mutableListOf(
+           BouquetPopular(1, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
+            BouquetPopular(2, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
+            BouquetPopular(3, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999)
+        )
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -73,6 +90,14 @@ class HomeFragment : Fragment() {
         binding.rvRecommended.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
         binding.rvRecommended.adapter = adapterBouquetRecommendationAdapter
         adapterBouquetRecommendationAdapter.setList(itemListBouquetRecommendation)
+
+        binding.rvDiscounts.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
+        binding.rvDiscounts.adapter = adapterBouquetDiscountsAdapter
+        adapterBouquetDiscountsAdapter.setList(itemListBouquetDiscounts)
+
+        binding.rvPopular.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
+        binding.rvPopular.adapter = adapterBouquetPopularAdapter
+        adapterBouquetPopularAdapter.setList(itemListBouquetPopular)
 
         return view
 

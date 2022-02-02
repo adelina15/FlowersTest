@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_bouquet_recommended1"
+            android:id="@+id/iv_bouquet_discounts"
             android:layout_width="155dp"
             android:layout_height="168dp"
             android:src="@drawable/bouquet"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:layout_marginTop="7dp"
-            android:src="@drawable/ic_new"
+            android:src="@drawable/ic_discounts_20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="7dp"
-            android:src="@drawable/ic_favorites_red"
+            android:src="@drawable/ic_favorites_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +50,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/ic_rating"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_recommended1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_bouquet_discounts"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -64,7 +64,7 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_recommended1" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_discounts" />
 
         <TextView
             android:id="@+id/tv_bouquet_description"
@@ -78,7 +78,7 @@
             app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name"
             app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name" />
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="144dp"
             android:layout_height="32dp"
