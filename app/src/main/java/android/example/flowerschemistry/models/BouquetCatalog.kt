@@ -1,6 +1,6 @@
 package android.example.flowerschemistry.models
 
-data class BouquetRecommendation(
+data class BouquetCatalog(
     val id: Int,
     var name: String,
     var price: Int,

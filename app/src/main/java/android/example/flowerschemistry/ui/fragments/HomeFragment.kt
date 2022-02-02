@@ -46,9 +46,9 @@ class HomeFragment : Fragment() {
 
     private val itemListBouquetRecommendation by lazy {
         mutableListOf(
-            BouquetRecommendation(1, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
-            BouquetRecommendation(2, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
-            BouquetRecommendation(3, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999)
+            BouquetRecommendation(1, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet ),
+            BouquetRecommendation(2, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet ),
+            BouquetRecommendation(3, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet )
         )
     }
 

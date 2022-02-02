@@ -33,5 +33,11 @@
     <string name="registrate">Регистрация</string>
     <string name="reg">Регистрация</string>
     <string name="name">Имя</string>
+    <string name="all_flowers">Все цветы</string>
+
+    <string-array name="rangeSlider">
+        <item>500</item>
+        <item>10000</item>
+    </string-array>
 
 </resources>
