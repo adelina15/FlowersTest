@@ -53,14 +53,18 @@
 
         <com.google.android.material.slider.RangeSlider
             android:id="@+id/slider"
-            style="@style/tooltips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             android:valueFrom="500"
             android:valueTo="10000"
+            android:stepSize="100"
             app:values="@array/rangeSlider"
-            tools:ignore="SpeakableTextPresentCheck"
+            app:thumbColor="@color/white"
+            app:thumbRadius="15dp"
+            app:trackHeight="10dp"
+            app:trackColorActive="@color/pink"
+            app:trackColorInactive="@color/text_color"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/searchView"/>

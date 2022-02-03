@@ -1,5 +1,6 @@
 package android.example.flowerschemistry.ui.fragments
 
+import android.content.Intent
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentHomeBinding
 import android.example.flowerschemistry.models.BouquetDiscounts
@@ -13,6 +14,7 @@ import android.view.ViewGroup
 import android.example.flowerschemistry.models.Card
 import android.example.flowerschemistry.ui.adapters.*
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlin.concurrent.fixedRateTimer
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -54,17 +56,17 @@ class HomeFragment : Fragment() {
 
     private val itemListBouquetDiscounts by lazy {
         mutableListOf(
-            BouquetDiscounts(1, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
-            BouquetDiscounts(2, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
-            BouquetDiscounts(3, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999)
+            BouquetDiscounts(1, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet),
+            BouquetDiscounts(2, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet),
+            BouquetDiscounts(3, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet)
         )
     }
 
     private val itemListBouquetPopular by lazy {
         mutableListOf(
-           BouquetPopular(1, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
-            BouquetPopular(2, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999),
-            BouquetPopular(3, "Букет осенний блюз", "Розы, ромашки, лилии", R.drawable.bouquet, 999)
+           BouquetPopular(1, "Букет осенний блюз",999, "Розы, ромашки, лилии",R.drawable.bouquet),
+            BouquetPopular(2, "Букет осенний блюз",999, "Розы, ромашки, лилии",R.drawable.bouquet),
+            BouquetPopular(3, "Букет осенний блюз",999, "Розы, ромашки, лилии",R.drawable.bouquet)
         )
     }
 
@@ -98,6 +100,12 @@ class HomeFragment : Fragment() {
         binding.rvPopular.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
         binding.rvPopular.adapter = adapterBouquetPopularAdapter
         adapterBouquetPopularAdapter.setList(itemListBouquetPopular)
+
+        /*binding.btnToCatalog.setOnClickListener {
+            val catalogFragment = CatalogFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, catalogFragment)?.commit()
+        }*/
 
         return view
 

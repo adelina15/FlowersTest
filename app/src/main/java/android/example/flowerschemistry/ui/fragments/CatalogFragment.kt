@@ -3,8 +3,6 @@ package android.example.flowerschemistry.ui.fragments
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentCatalogBinding
 import android.example.flowerschemistry.models.BouquetCatalog
-import android.example.flowerschemistry.models.BouquetPopular
-import android.example.flowerschemistry.ui.adapters.BouquetRecommendationAdapter
 import android.example.flowerschemistry.ui.adapters.CatalogAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,9 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import java.text.NumberFormat
-import java.util.*
 
 
 class CatalogFragment : Fragment() {
@@ -43,11 +38,10 @@ class CatalogFragment : Fragment() {
         binding.rvCatalog.adapter = adapterCatalog
         adapterCatalog.setList(itemListCatalog)
 
-       /* binding.slider.setLabelFormatter{ value: Float ->
-            val format = NumberFormat.getCurrencyInstance()
-            format.maximumFractionDigits = 0
-            format.currency = Currency.getInstance("с")
-            format.format(value.toDouble())}*/
+        binding.slider.setLabelFormatter {
+            getString(R.string.label_format, it)
+        }
+
         return view
 
     }

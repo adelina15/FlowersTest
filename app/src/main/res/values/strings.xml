@@ -34,6 +34,7 @@
     <string name="reg">Регистрация</string>
     <string name="name">Имя</string>
     <string name="all_flowers">Все цветы</string>
+    <string name="label_format">%1$.0f сом</string>
 
     <string-array name="rangeSlider">
         <item>500</item>
