@@ -4,10 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_bouquet"
-    android:layout_width="155dp"
+    android:layout_width="160dp"
     android:layout_height="273dp"
     android:layout_marginTop="14dp"
     android:layout_marginStart="10dp"
+    android:layout_marginBottom="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="5dp">
 
@@ -17,9 +18,10 @@
 
         <ImageView
             android:id="@+id/iv_bouquet_catalog"
-            android:layout_width="155dp"
+            android:layout_width="160dp"
             android:layout_height="168dp"
             android:src="@drawable/bouquet"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

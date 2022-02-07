@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "726945258808",
+    "project_id": "flowerschemistry",
+    "storage_bucket": "flowerschemistry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726945258808:android:932d0e3a15e1c1290cb5cd",
+        "android_client_info": {
+          "package_name": "android.example.flowerschemistry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726945258808-b90hbep3pglm5r8b7beqdn61ga115qou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj3XfhIEiJyfFYsMOKvYTY2i0XhkADSPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726945258808-b90hbep3pglm5r8b7beqdn61ga115qou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

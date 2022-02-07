@@ -26,7 +26,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="70dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="@string/login"
+        android:text="@string/authorization"
         android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,35 +110,20 @@
         app:layout_constraintStart_toStartOf="@+id/relativeLayout"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_registration"
-        android:layout_width="272dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/button"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/sf_pro_display"
-        android:text="@string/registration"
-        android:textColor="@color/pink"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
-        app:layout_constraintTop_toBottomOf="@+id/btn_next" />
 
     <Button
         android:id="@+id/tv_skip"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/sf_pro_display"
         android:text="@string/skip"
         android:textAllCaps="false"
         android:textColor="@color/pink"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_registration" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_next" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,24 +20,26 @@
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_splash.xml" value="0.19583333333333333" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_vector_49.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/logo_camomile.xml" value="0.2203125" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/rounded_corner.xml" value="0.17848101265822786" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/search_view_background.xml" value="0.146875" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/splash_image.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_light.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_medium.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/font/roboto_thin.xml" value="0.19537037037037036" />
-        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_authorization_phone.xml" value="0.1675213675213675" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_authorization_phone.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_authorization_smscode.xml" value="0.1675213675213675" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_phone.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_sms_code.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_smscode.xml" value="0.25" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/customview_layout.xml" value="0.1675213675213675" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_basket.xml" value="0.17" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_catalog.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_favorites.xml" value="0.1361111111111111" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_home.xml" value="0.19570644033949075" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_more.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/item_card.xml" value="0.5" />
-        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/item_card_catalog.xml" value="0.1675213675213675" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/item_card_catalog.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/item_card_discounts.xml" value="0.5" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/item_card_first_row.xml" value="0.1675213675213675" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/item_card_popular.xml" value="0.1675213675213675" />

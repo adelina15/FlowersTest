@@ -23,9 +23,5 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnRegistration.setOnClickListener {
-            val intent = Intent(this, RegistrationPhoneActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

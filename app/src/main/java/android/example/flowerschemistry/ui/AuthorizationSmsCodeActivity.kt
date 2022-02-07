@@ -17,8 +17,8 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.linearLayoutBack.setOnClickListener {
-            val intent = Intent(this, AuthorizationPhoneActivity::class.java)
-            startActivity(intent) }
+            onBackPressed()
+        }
 
     }
 }

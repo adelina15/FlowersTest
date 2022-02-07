@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FlowersChemistry</string>
+    <string name="app_name">Химия цветов</string>
     <string name="back">Назад</string>
     <string name="login">Войти</string>
     <string name="input_number">Введите свой номер телефона</string>
@@ -35,6 +35,8 @@
     <string name="name">Имя</string>
     <string name="all_flowers">Все цветы</string>
     <string name="label_format">%1$.0f сом</string>
+    <string name="authorization">Авторизоваться</string>
+    <string name="go_to_authorization">Чтобы добавить товар в избранное пожалуйста пройдите авторизацию</string>
 
     <string-array name="rangeSlider">
         <item>500</item>

@@ -14,7 +14,7 @@ class RegistrationSmsCodeActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.linearLayoutBack.setOnClickListener {
-            val intent = Intent(this, RegistrationPhoneActivity::class.java)
-            startActivity(intent) }
+            onBackPressed()
+        }
     }
 }
