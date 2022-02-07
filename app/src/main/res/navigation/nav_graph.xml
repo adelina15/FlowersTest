@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_basketFragment"
             app:destination="@id/basketFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
@@ -38,10 +41,22 @@
         <action
             android:id="@+id/action_favoritesFragment_to_moreFragment"
             app:destination="@id/moreFragment" />
+        <action
+            android:id="@+id/action_favoritesFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/moreFragment"
         android:name="android.example.flowerschemistry.ui.fragments.MoreFragment"
-        android:label="MoreFragment" />
+        android:label="MoreFragment" >
+        <action
+            android:id="@+id/action_moreFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

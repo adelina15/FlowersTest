@@ -1,6 +1,6 @@
 package android.example.flowerschemistry.ui.fragments
 
-import android.content.Intent
+
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentHomeBinding
 import android.example.flowerschemistry.models.BouquetDiscounts
@@ -13,8 +13,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.models.Card
 import android.example.flowerschemistry.ui.adapters.*
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlin.concurrent.fixedRateTimer
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -101,11 +102,8 @@ class HomeFragment : Fragment() {
         binding.rvPopular.adapter = adapterBouquetPopularAdapter
         adapterBouquetPopularAdapter.setList(itemListBouquetPopular)
 
-        /*binding.btnToCatalog.setOnClickListener {
-            val catalogFragment = CatalogFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.fragmentContainerView, catalogFragment)?.commit()
-        }*/
+        binding.btnToCatalog.setOnClickListener { Navigation.findNavController(view)
+            .navigate(R.id.action_homeFragment_to_catalogFragment) }
 
         return view
 

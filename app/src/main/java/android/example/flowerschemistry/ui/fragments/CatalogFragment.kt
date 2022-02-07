@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 
 
@@ -41,6 +42,7 @@ class CatalogFragment : Fragment() {
         binding.slider.setLabelFormatter {
             getString(R.string.label_format, it)
         }
+
 
         return view
 

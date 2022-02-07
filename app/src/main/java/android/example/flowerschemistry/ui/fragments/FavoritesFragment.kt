@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 
 class FavoritesFragment : Fragment() {
     private var _binding: FragmentFavoritesBinding? = null
@@ -25,6 +26,9 @@ class FavoritesFragment : Fragment() {
     ): View? {
         _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        binding.btnGoToCatalog.setOnClickListener { Navigation.findNavController(view)
+            .navigate(R.id.action_favoritesFragment_to_catalogFragment) }
         return view
 
     }
