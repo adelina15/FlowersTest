@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_phoneNumber"
         app:layout_constraintTop_toBottomOf="@+id/tv_phoneNumber"
-        app:lineColor="@color/pink"
+        app:lineColor="@color/black"
         app:lineWidth="1dp"
         app:viewType="rectangle" />
 
@@ -119,6 +119,7 @@
         android:text="@string/incorrect_code"
         android:textColor="@color/pink"
         android:textSize="16sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tv_phoneNumber"
         app:layout_constraintStart_toEndOf="@+id/tv_phoneNumber"
         app:layout_constraintTop_toTopOf="@+id/tv_phoneNumber" />

@@ -3,6 +3,7 @@
     <string name="back">Назад</string>
     <string name="login">Войти</string>
     <string name="input_number">Введите свой номер телефона</string>
+    <string name="input_number2">Введите номер</string>
     <string name="_996">+996</string>
     <string name="next">Далее</string>
     <string name="skip">Пропустить</string>

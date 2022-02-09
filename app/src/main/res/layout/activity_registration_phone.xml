@@ -124,7 +124,6 @@
                     android:autoLink="phone"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/roboto_medium"
-                    android:hint="*** ** ** **"
                     android:inputType="phone"
                     android:paddingTop="10dp"
                     android:textColor="@color/black"

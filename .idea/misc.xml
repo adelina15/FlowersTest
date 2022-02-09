@@ -6,6 +6,8 @@
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button.xml" value="0.19537037037037036" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button_background_extra.xml" value="0.18076923076923077" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button_background_price.xml" value="0.19583333333333333" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button_background_save.xml" value="0.18076923076923077" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/button_save.xml" value="0.18076923076923077" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/card_view1_background.xml" value="0.146875" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/cardview_backgraound.xml" value="0.2203125" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/drawable/ic_arrow_back.xml" value="0.19537037037037036" />
@@ -34,7 +36,9 @@
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_sms_code.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/activity_registration_smscode.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/customview_layout.xml" value="0.25" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_base.xml" value="0.1675213675213675" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_basket.xml" value="0.17" />
+        <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_bouquet.xml" value="0.1675213675213675" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_catalog.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_favorites.xml" value="0.1361111111111111" />
         <entry key="..\:/MyMobileDev/FlowersChemistry/app/src/main/res/layout/fragment_home.xml" value="0.19570644033949075" />
