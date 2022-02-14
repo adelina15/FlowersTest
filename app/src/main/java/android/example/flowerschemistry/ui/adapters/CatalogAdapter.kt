@@ -3,18 +3,16 @@ package android.example.flowerschemistry.ui.adapters
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardCatalogBinding
 import android.example.flowerschemistry.models.BouquetCatalog
-import android.example.flowerschemistry.models.BouquetPopular
 import android.example.flowerschemistry.ui.utils.CatalogDiffUtil
-import android.example.flowerschemistry.ui.utils.PopularDiffUtil
+import android.example.flowerschemistry.ui.utils.OnItemClickListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class CatalogAdapter: RecyclerView.Adapter<CatalogAdapter.CardsViewHolder>() {
-
-    private var list = mutableListOf<BouquetCatalog>()
+class CatalogAdapter(var list: ArrayList <BouquetCatalog>, val clickListener: OnItemClickListener)
+    : RecyclerView.Adapter<CatalogAdapter.CardsViewHolder>() {
 
     fun setList(newList: MutableList<BouquetCatalog>){
         val diffCallback = CatalogDiffUtil(list, newList)
@@ -26,11 +24,15 @@ class CatalogAdapter: RecyclerView.Adapter<CatalogAdapter.CardsViewHolder>() {
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = ItemCardCatalogBinding.bind(item)
-        fun bind(card:BouquetCatalog) = with(binding){
+        fun bind(card:BouquetCatalog, action:OnItemClickListener) = with(binding){
             ivBouquetCatalog.setImageResource(card.img)
             tvBouquetName.text = card.name
-            tvBouquetDescription.text = card.description
+            tvBouquetDescription.text = card.description_flowers
             tvPrice.text = card.price.toString()
+
+            itemView.setOnClickListener{
+                action.onItemClick(card)
+            }
         }
     }
 
@@ -40,7 +42,10 @@ class CatalogAdapter: RecyclerView.Adapter<CatalogAdapter.CardsViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CatalogAdapter.CardsViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position], clickListener)
+        /*holder.itemView.setOnClickListener {
+            clickListener.onItemClick(list[position])
+        }*/
     }
 
     override fun getItemCount(): Int {

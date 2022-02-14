@@ -5,5 +5,6 @@ data class BouquetCatalog(
     var name: String,
     var price: Int,
     var description: String,
+    var description_flowers: String,
     var img: Int
 )

@@ -53,10 +53,24 @@
         <action
             android:id="@+id/action_moreFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="android.example.flowerschemistry.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/bouquetFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.BouquetFragment"
+        android:label="fragment_bouquet"
+        tools:layout="@layout/fragment_bouquet" />
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.ContactsFragment"
+        android:label="fragment_contacts"
+        tools:layout="@layout/fragment_contacts" />
 </navigation>

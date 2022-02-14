@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowersChemistry">
         <activity
+            android:name=".ui.AboutBouquet"
+            android:exported="false" />
+        <activity
             android:name=".ui.RegistrationSmsCodeActivity"
             android:exported="true" />
         <activity

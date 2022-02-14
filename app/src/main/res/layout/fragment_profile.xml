@@ -113,7 +113,8 @@
             android:fontFamily="@font/roboto_medium"
             android:hint="Номер телефона"
             android:paddingStart="12dp"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:inputType="phone"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -160,8 +161,8 @@
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginTop="45dp"
+        android:background="@drawable/button_background_save"
         android:fontFamily="@font/roboto_medium"
-        android:background="@drawable/button"
         android:text="@string/save"
         android:textAllCaps="false"
         android:textSize="16sp"

@@ -5,6 +5,7 @@ import android.example.flowerschemistry.R
 import androidx.fragment.app.Fragment
 import android.example.flowerschemistry.databinding.FragmentMoreBinding
 import android.example.flowerschemistry.databinding.FragmentProfileBinding
+import android.example.flowerschemistry.ui.AboutBouquet
 import android.example.flowerschemistry.ui.RegistrationSmsCodeActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,9 +26,14 @@ class MoreFragment : Fragment() {
     ): View? {
         _binding = FragmentMoreBinding.inflate(inflater, container, false)
         val view = binding.root
+
         binding.btnProfile.setOnClickListener { Navigation.findNavController(view)
             .navigate(R.id.action_moreFragment_to_profileFragment) }
 
+        binding.btnContacts.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_moreFragment_to_contactsFragment)
+        }
         return view
 
     }
