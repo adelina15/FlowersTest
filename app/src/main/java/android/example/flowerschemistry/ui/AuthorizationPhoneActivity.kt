@@ -28,43 +28,9 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
         setContentView(view)
 
         auth=FirebaseAuth.getInstance()
+
         binding.btnNext.setOnClickListener {
             login()
-            val intent = Intent(this, AuthorizationSmsCodeActivity::class.java)
-            intent.putExtra("phoneNumber", number)
-            startActivity(intent)
-        }
-
-        callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-            // Этот метод вызывается после завершения проверки
-            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
-                finish()
-                Log.d("GFG" , "Верификация прошла успешно")
-            }
-
-            // Вызывается, когда проверка не удалась
-            override fun onVerificationFailed(e: FirebaseException) {
-                Log.d("GFG" , "Верификация не удалась $e")
-            }
-
-            // При отправке кода Firebase вызывается этот метод
-            //здесь мы начинаем новую активность, в которой пользователь может ввести OTP
-            override fun onCodeSent(
-                verificationId: String,
-                token: PhoneAuthProvider.ForceResendingToken
-            ) {
-                Log.d("GFG","onCodeSent: $verificationId")
-                storedVerificationId = verificationId
-                resendToken = token
-                //Запускаем новую activity, используя intent
-                //Используем id для отправки otp обратно в firebase
-                val intent = Intent(applicationContext,AuthorizationSmsCodeActivity::class.java)
-                intent.putExtra("storedVerificationId",storedVerificationId)
-                startActivity(intent)
-                finish()
-            }
         }
 
         binding.tvSkip.setOnClickListener {
@@ -81,24 +47,16 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
         //получить номер телефона из editText
         number = binding.edTextPhone.text.trim().toString()
         if (number.isNotEmpty()){
-            sendVerificationCode(number)
+           // sendVerificationCode(number)
+            val intent = Intent(this, AuthorizationSmsCodeActivity::class.java)
+            intent.putExtra("phoneNumber", number)
+            startActivity(intent)
         }else{
             Toast.makeText(this,"Введите номер телефона", Toast.LENGTH_SHORT).show()
         }
     }
 
-    // этот метод отправляет код подтверждения и запускает обратный вызов проверки
-    // который реализован выше в onCreate
-    private fun sendVerificationCode(number: String) {
-        val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(number) // Номер телефона для подтверждения
-            .setTimeout(60L, TimeUnit.SECONDS) // Время для подтверждения смс кода
-            .setActivity(this)
-            .setCallbacks(callbacks)
-            .build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
-        Log.d("GFG" , "Авторизация началась")
-    }
+
 
     /*?private fun validatePhone(): Boolean {
         val phoneInput = binding.edTextPhone.text.toString()
