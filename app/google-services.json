@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "726945258808-45s729t4mu5ttdndlju594lmfe4sl4ls.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.example.flowerschemistry",
+            "certificate_hash": "443af6a0a50a62b0b1bcbd38224af0c2600c6625"
+          }
+        },
+        {
           "client_id": "726945258808-b90hbep3pglm5r8b7beqdn61ga115qou.apps.googleusercontent.com",
           "client_type": 3
         }

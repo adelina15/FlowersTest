@@ -89,7 +89,6 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:singleLine="true"
-                    android:maxLength="9"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView"
                     app:layout_constraintStart_toEndOf="@+id/textView" />
             </androidx.constraintlayout.widget.ConstraintLayout>

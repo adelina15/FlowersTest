@@ -18,9 +18,6 @@
             android:name=".ui.RegistrationSmsCodeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.RegistrationPhoneActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
