@@ -56,5 +56,20 @@
     <string name="same_text">Вы можете связатся с нами любым удобным вам способом</string>
     <string name="email">himia-tsetov@gmail.com</string>
     <string name="address">Бульвар Эркиндик, 35, 1 этаж</string>
+    <string name="address1">Адрес</string>
+    <string name="order">Оформить заказ</string>
+    <string name="sender">Отправитель</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="wishes">Ваши пожелания</string>
+    <string name="recevier">Получатель</string>
+    <string name="note">Записка</string>
+    <string name="subtotal">Промежуточный итог</string>
+    <string name="discount">Скидка</string>
+    <string name="delivery">Доставка</string>
+    <string name="total">Всего</string>
+    <string name="pickup">Самовывоз</string>
+    <string name="order_accepted">Ваш заказ принят!</string>
+    <string name="order_accepted_text">Ожидайте звонка администратора для потверждения заказа</string>
+    <string name="go_to_home">Перейти на главную</string>
 
 </resources>

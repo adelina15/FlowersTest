@@ -1,11 +1,15 @@
 package android.example.flowerschemistry.ui
 
+import android.content.Intent
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ActivityAboutBouquetBinding
 import android.example.flowerschemistry.databinding.ActivityMainBinding
 import android.example.flowerschemistry.ui.adapters.SliderAdapter
+import android.example.flowerschemistry.ui.fragments.OrderFragment
+import android.example.flowerschemistry.ui.fragments.SenderReceiverFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.Navigation
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 
@@ -29,5 +33,6 @@ class AboutBouquet : AppCompatActivity() {
         sliderAdapter.let {
             (intent.getStringExtra("Image")?.toInt())
         }
+
     }
 }
