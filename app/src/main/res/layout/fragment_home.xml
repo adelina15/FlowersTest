@@ -82,11 +82,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
-                    android:fontFamily="@font/roboto_medium"
+                    style="@style/TextView_26sp_medium"
                     android:paddingBottom="1dp"
                     android:text="@string/women_day"
-                    android:textColor="@color/black"
-                    android:textSize="28sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

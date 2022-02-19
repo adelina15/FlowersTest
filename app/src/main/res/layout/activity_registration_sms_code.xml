@@ -54,10 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_32sp_medium"
         android:text="@string/tv_sms"
-        android:textColor="@color/black"
-        android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -66,10 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_16sp_medium"
         android:text="@string/tv_send_number"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/tv_login"
         app:layout_constraintTop_toBottomOf="@+id/tv_login" />
 
@@ -78,10 +74,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_18sp_medium"
         android:text="@string/_996_705_507_157"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tv_description"
         app:layout_constraintTop_toBottomOf="@+id/tv_description" />

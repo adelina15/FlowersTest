@@ -26,10 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="Ваша корзина"
-        android:textColor="@color/black"
-        android:textSize="26sp"
+        style="@style/TextView_26sp_medium"
+        android:text="@string/your_basket"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toTopOf="parent" />
 

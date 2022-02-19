@@ -25,10 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_32sp_medium"
         android:text="@string/authorization"
-        android:textColor="@color/black"
-        android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -37,10 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_16sp_medium"
         android:text="@string/input_number"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/tv_login"
         app:layout_constraintTop_toBottomOf="@+id/tv_login" />
 
@@ -70,13 +66,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@android:color/transparent"
-                    android:fontFamily="@font/roboto_medium"
+                    style="@style/TextView_18sp_medium"
                     android:hint="+996555555555"
                     android:inputType="phone"
                     android:paddingTop="10dp"
                     android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

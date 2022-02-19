@@ -25,10 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_18sp_medium"
         android:text="@string/sender"
-        android:textColor="@color/black"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,10 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/name"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -73,10 +70,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/phone_number"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -97,10 +93,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/wishes"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -109,10 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_18sp_medium"
         android:text="@string/recevier"
-        android:textColor="@color/black"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/cardview_wishes" />
 
@@ -133,10 +126,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/name"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -157,10 +149,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/address1"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -181,10 +172,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/phone_number"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -205,10 +195,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:hint="@string/note"
-            android:paddingStart="12dp"
-            android:textSize="18sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.BouquetFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_bouquet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_slider1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+                android:id="@+id/im_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_vector_49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/TextView_18sp_medium"
+        android:text="13.08.2021"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/tv_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        style="@style/TextView_18sp_medium"
+        android:text="Букет Гармония"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <TextView
+        android:id="@+id/tv_name1_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        style="@style/TextView_18sp_medium"
+        android:text="2000"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name1"
+        app:layout_constraintEnd_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="@+id/tv_name1" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name1"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_name1" />
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/TextView_18sp_medium"
+        android:text="Рафаэло"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name1" />
+
+    <TextView
+        android:id="@+id/tv_name2_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        style="@style/TextView_18sp_medium"
+        android:text="500"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name2"
+        app:layout_constraintEnd_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="@+id/tv_name2" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name2"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_name2" />
+
+    <TextView
+        android:id="@+id/tv_subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/subtotal"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name2" />
+
+    <TextView
+        android:id="@+id/tv_subtotal_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        style="@style/TextView_18sp_medium"
+        android:text="2000"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_subtotal"
+        app:layout_constraintEnd_toStartOf="@+id/tv3"
+        app:layout_constraintTop_toTopOf="@+id/tv_subtotal" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_subtotal_sum"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_subtotal_sum" />
+
+    <TextView
+        android:id="@+id/tv_discounts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/discount"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtotal" />
+
+    <TextView
+        android:id="@+id/tv_discounts_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        style="@style/TextView_18sp_medium"
+        android:text="-150"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_discounts"
+        app:layout_constraintEnd_toStartOf="@+id/tv4"
+        app:layout_constraintTop_toTopOf="@+id/tv_discounts" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_discounts_sum"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_discounts_sum" />
+
+    <TextView
+        android:id="@+id/tv_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/delivery"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_discounts" />
+
+    <TextView
+        android:id="@+id/tv_delivery_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        style="@style/TextView_18sp_medium"
+        android:text="-200"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_delivery"
+        app:layout_constraintEnd_toStartOf="@+id/tv5"
+        app:layout_constraintTop_toTopOf="@+id/tv_delivery" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_delivery_sum"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_delivery_sum" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="11dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_delivery" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/TextView_18sp_medium"
+        android:text="@string/total"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/tv_total_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        style="@style/TextView_18sp_medium"
+        android:text="2050"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_total"
+        app:layout_constraintEnd_toStartOf="@+id/tv6"
+        app:layout_constraintTop_toTopOf="@+id/tv_total" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView_18sp_medium"
+        android:textStyle="bold"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_total_sum"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_total_sum" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

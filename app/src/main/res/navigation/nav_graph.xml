@@ -59,23 +59,32 @@
         <action
             android:id="@+id/action_moreFragment_to_orderFragment"
             app:destination="@id/orderFragment" />
-
+        <action
+            android:id="@+id/action_moreFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_yourOrdersFragment"
+            app:destination="@id/yourOrdersFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="android.example.flowerschemistry.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
         android:id="@+id/bouquetFragment"
         android:name="android.example.flowerschemistry.ui.fragments.BouquetFragment"
         android:label="fragment_bouquet"
         tools:layout="@layout/fragment_bouquet" />
+
     <fragment
         android:id="@+id/contactsFragment"
         android:name="android.example.flowerschemistry.ui.fragments.ContactsFragment"
         android:label="fragment_contacts"
         tools:layout="@layout/fragment_contacts" />
+
     <fragment
         android:id="@+id/orderFragment"
         android:name="android.example.flowerschemistry.ui.fragments.OrderFragment"
@@ -84,8 +93,19 @@
             android:id="@+id/action_orderFragment_to_senderReceiverFragment"
             app:destination="@id/senderReceiverFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/senderReceiverFragment"
         android:name="android.example.flowerschemistry.ui.fragments.SenderReceiverFragment"
         android:label="SenderReceiverFragment" />
+
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.OrderDetailFragment"
+        android:label="OrderDetailFragment" />
+
+    <fragment
+        android:id="@+id/yourOrdersFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.YourOrdersFragment"
+        android:label="YourOrdersFragment" />
 </navigation>

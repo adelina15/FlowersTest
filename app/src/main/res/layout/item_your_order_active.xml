@@ -56,32 +56,51 @@
                 style="@style/TextView_18sp_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="9dp"
                 android:text="Букет Аврора"
                 app:layout_constraintStart_toEndOf="@+id/iv_icon"
-                app:layout_constraintTop_toBottomOf="@+id/iv_delete" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                style="@style/TextView_13sp_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="13.08.2021"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
             <TextView
                 android:id="@+id/tv_price"
-                style="@style/TextView_18sp_medium"
+                style="@style/TextView_13sp_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
                 android:text="2000"
-                app:layout_constraintStart_toEndOf="@+id/iv_icon"
-                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+                app:layout_constraintStart_toStartOf="@+id/tv_date"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 
             <TextView
                 android:id="@+id/tv_txt"
-                style="@style/TextView_18sp_medium"
+                style="@style/TextView_13sp_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@string/som"
                 app:layout_constraintStart_toEndOf="@+id/tv_price"
                 app:layout_constraintTop_toTopOf="@+id/tv_price" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/TextView_13sp_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Токтогула 87"
+                app:layout_constraintStart_toStartOf="@+id/tv_price"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
 
             <ImageView
                 android:id="@+id/iv_delete"
@@ -90,50 +109,22 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="12dp"
                 android:src="@drawable/ic_delete"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="11dp"
+            <ImageView
+                android:id="@+id/iv_repeat"
+                android:layout_width="66dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/img_on_way"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <ImageView
-                    android:id="@+id/iv_minus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_btn_minus"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/tv_quantity"
-                    style="@style/TextView_18sp_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:text="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_minus"
-                    app:layout_constraintStart_toEndOf="@+id/iv_minus"
-                    app:layout_constraintTop_toTopOf="@+id/iv_minus" />
-
-                <ImageView
-                    android:id="@+id/iv_plus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:src="@drawable/ic_btn_plus"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tv_quantity"
-                    app:layout_constraintTop_toTopOf="@+id/tv_quantity" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,10 +30,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_26sp_medium"
             android:text="@string/catalog"
-            android:textColor="@color/black"
-            android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toTopOf="parent" />
@@ -94,10 +92,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_18sp_medium"
             android:text="@string/all_flowers"
-            android:textColor="@color/black"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_txt1" />
 

@@ -36,10 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto_medium"
         android:text="@string/profile"
-        android:textColor="@color/black"
-        android:textSize="26dp"
+        style="@style/TextView_26sp_medium"
         app:layout_constraintStart_toEndOf="@+id/im_btn_back"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,10 +71,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_16sp_medium"
             android:hint="Введите имя"
-            android:paddingStart="12dp"
-            android:textSize="16sp" />
+            android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -110,10 +107,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_16sp_medium"
             android:hint="Номер телефона"
             android:paddingStart="12dp"
-            android:textSize="16sp"
             android:inputType="phone"/>
 
     </com.google.android.material.card.MaterialCardView>
@@ -148,10 +144,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/TextView_16sp_medium"
             android:hint="Электронная почта"
-            android:paddingStart="12dp"
-            android:textSize="16sp" />
+            android:paddingStart="12dp"/>
 
     </com.google.android.material.card.MaterialCardView>
 

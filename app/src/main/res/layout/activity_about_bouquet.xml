@@ -83,10 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_26sp_medium"
         android:text="Букет Аврора"
-        android:textColor="@color/black"
-        android:textSize="26sp"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -129,10 +127,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/TextView_16sp_medium"
         android:text="@string/bouquet_description"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/btn_about_bouquet" />
