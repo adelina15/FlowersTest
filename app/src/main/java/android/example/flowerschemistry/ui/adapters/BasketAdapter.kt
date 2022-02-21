@@ -1,30 +1,29 @@
 package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
-import android.example.flowerschemistry.databinding.ItemCardFavoritesBinding
+import android.example.flowerschemistry.databinding.ItemCardBasketBinding
 import android.example.flowerschemistry.models.BouquetCatalog
-import android.example.flowerschemistry.ui.utils.FavoritesDiffUtil
+import android.example.flowerschemistry.ui.utils.BasketDiffUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class FavoritesAdapter: RecyclerView.Adapter<FavoritesAdapter.MyViewHolder>(){
+class BasketAdapter: RecyclerView.Adapter<BasketAdapter.MyViewHolder>() {
 
     private var list = mutableListOf<BouquetCatalog>()
 
     fun setList(newList: MutableList<BouquetCatalog>){
-        val diffCallback = FavoritesDiffUtil(list, newList)
+        val diffCallback = BasketDiffUtil(list, newList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         list.clear()
         list.addAll(newList)
         diffResult.dispatchUpdatesTo(this)
     }
 
-
-    class MyViewHolder(item: View): RecyclerView.ViewHolder(item) {
-        val binding = ItemCardFavoritesBinding.bind(item)
+    class MyViewHolder (item: View): RecyclerView.ViewHolder(item) {
+        val binding = ItemCardBasketBinding.bind(item)
         fun bind(item: BouquetCatalog) = with(binding){
             ivBouquetCatalog.setImageResource(item.img)
             tvBouquetName.text = item.name
@@ -35,11 +34,11 @@ class FavoritesAdapter: RecyclerView.Adapter<FavoritesAdapter.MyViewHolder>(){
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card_favorites, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card_basket, parent, false)
         return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: FavoritesAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(list[position])
     }
 

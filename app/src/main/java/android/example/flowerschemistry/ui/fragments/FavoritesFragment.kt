@@ -16,7 +16,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+
 
 class FavoritesFragment : Fragment() {
     private var _binding: FragmentFavoritesBinding? = null
@@ -27,6 +27,8 @@ class FavoritesFragment : Fragment() {
         arrayListOf(
             BouquetCatalog(1, "Летний вечер", 999,"Удивите кого-то особенным дизайном в оранжевых тонах, которые напоминают нежную кожицу. Розы, лилии, герберы, хризантемы и альстромерии составляют эту свежую ароматную композицию. Подойдет любительницам персиковых тонов!", "Розы, ромашки, лилии", R.drawable.image_slider3),
             BouquetCatalog(2, "Робкая нежность", 999,"Герберы – красочные солнечные цветочки, входят в топ самых популярных при составлении букетов. Они отлично смотрятся в разных сочетаниях и годятся абсолютно к каждому торжеству. Тем более что в срезанном виде они сохраняют свежесть до недели.", "Розы, ромашки, лилии", R.drawable.image_slider1),
+            BouquetCatalog(3, "Тайная мечта", 999,"Фрезии — весенние цветы, имеют большое число оттенков. Существуют белые, желтые, красные, синие, багровые и фиолетовые разновидности. Букеты из фрезии – это символ полного доверия и благих намерений, отчего эти композиции, как правило, презентуют на помолвки или свадебные торжества.","Розы, ромашки, лилии", R.drawable.bouquet),
+            BouquetCatalog(4, "Тайная мечта", 999,"Фрезии — весенние цветы, имеют большое число оттенков. Существуют белые, желтые, красные, синие, багровые и фиолетовые разновидности. Букеты из фрезии – это символ полного доверия и благих намерений, отчего эти композиции, как правило, презентуют на помолвки или свадебные торжества.","Розы, ромашки, лилии", R.drawable.bouquet),
             BouquetCatalog(3, "Тайная мечта", 999,"Фрезии — весенние цветы, имеют большое число оттенков. Существуют белые, желтые, красные, синие, багровые и фиолетовые разновидности. Букеты из фрезии – это символ полного доверия и благих намерений, отчего эти композиции, как правило, презентуют на помолвки или свадебные торжества.","Розы, ромашки, лилии", R.drawable.bouquet)
         )
     }
@@ -72,6 +74,8 @@ class FavoritesFragment : Fragment() {
     private fun  setUpRecyclerViewFavorites() {
         binding.imFavorites.visibility = View.GONE
         binding.tvTxt.visibility = View.GONE
+        binding.btnGoToCatalog.visibility = View.GONE
+        binding.rvFavoritesFull.visibility = View.VISIBLE
         binding.rvFavoritesFull.apply {
             adapter = adapterFavorites
             layoutManager = GridLayoutManager(requireContext(), 2)

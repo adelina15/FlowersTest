@@ -71,6 +71,7 @@
     <string name="order_accepted">Ваш заказ принят!</string>
     <string name="order_accepted_text">Ожидайте звонка администратора для потверждения заказа</string>
     <string name="go_to_home">Перейти на главную</string>
+    <string name="go_to_catalog">Перейти в каталог</string>
     <string name="your_basket">Ваша корзина</string>
     <string name="your_orders">Ваши заказы</string>
     <string name="active">Активные</string>
