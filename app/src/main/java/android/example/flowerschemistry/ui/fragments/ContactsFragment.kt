@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.navigation.fragment.findNavController
 
 
 class ContactsFragment : Fragment() {
@@ -19,6 +19,9 @@ class ContactsFragment : Fragment() {
     ): View? {
         _binding = FragmentContactsBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        binding.imBtnBack.setOnClickListener { findNavController().navigateUp() }
+
         return view
     }
 

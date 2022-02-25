@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.databinding.FragmentBouquetBinding
 import android.example.flowerschemistry.ui.adapters.SliderAdapter
+import androidx.navigation.fragment.findNavController
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 
@@ -29,6 +30,10 @@ class BouquetFragment : Fragment() {
         binding.sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
         binding.sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
         binding.sliderView.startAutoCycle()
+
+        binding.imBtnBack.setOnClickListener { findNavController().navigateUp() }
+
+        binding.btnToOrder.setOnClickListener { findNavController().navigate(R.id.action_bouquetFragment_to_orderFragment) }
 
         return view
 

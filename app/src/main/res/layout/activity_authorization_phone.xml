@@ -81,7 +81,7 @@
                     android:paddingBottom="8dp"
                     android:background="@android:color/transparent"
                     style="@style/TextView_18sp_medium"
-                    android:hint="+996555555555"
+                    android:hint="555555555"
                     android:inputType="phone"
                     android:paddingTop="10dp"
                     android:singleLine="true"

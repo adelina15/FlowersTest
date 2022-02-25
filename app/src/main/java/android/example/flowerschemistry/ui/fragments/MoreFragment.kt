@@ -34,12 +34,6 @@ class MoreFragment : Fragment() {
                 .navigate(R.id.action_moreFragment_to_yourOrdersFragment)
         }
 
-        binding.btnExit.setOnClickListener {
-            Navigation.findNavController(view)
-                .navigate(R.id.action_moreFragment_to_orderFragment)
-        }
-
-
         return view
 
     }

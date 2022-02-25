@@ -28,11 +28,11 @@ class AboutBouquet : AppCompatActivity() {
         binding.sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
         binding.sliderView.startAutoCycle()
 
-        binding.tvNameBouquet.text = getIntent().getStringExtra("Name")
-        binding.tvDescription.text = getIntent().getStringExtra("Description")
-        sliderAdapter.let {
-            (intent.getStringExtra("Image")?.toInt())
-        }
+        //binding.tvNameBouquet.text = getIntent().getStringExtra("Name")
+       // binding.tvDescription.text = getIntent().getStringExtra("Description")
+       // sliderAdapter.let {
+       //     (intent.getStringExtra("Image")?.toInt())
+       // }
 
     }
 }

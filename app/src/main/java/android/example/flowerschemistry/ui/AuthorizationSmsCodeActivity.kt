@@ -1,9 +1,8 @@
 package android.example.flowerschemistry.ui
 
-import android.annotation.SuppressLint
+
 import android.app.Activity
 import android.content.Intent
-import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ActivityAuthorizationSmscodeBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +10,6 @@ import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
@@ -61,9 +59,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
         }
 
         sendVerificationCode()
-
-        // получаем сохранненый storedVerificationId из intent
-       // val storedVerificationId= intent.getStringExtra("storedVerificationId")
 
         
         // заполняем otp и вызывем по нажатии на кнопку
@@ -136,6 +131,7 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
 
+    // Зпуск таймера чтобы пользователь за 60 сек ввел смс код
     private fun startTimer() {
         object : CountDownTimer(60000, 1000) {
             override fun onTick(millisUntilFinished: Long) {

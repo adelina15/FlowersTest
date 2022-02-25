@@ -4,14 +4,10 @@ import android.content.Intent
 import android.example.flowerschemistry.databinding.ActivityAuthorizationPhoneBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import java.util.concurrent.TimeUnit
+
 
 class AuthorizationPhoneActivity : AppCompatActivity() {
     lateinit var binding: ActivityAuthorizationPhoneBinding

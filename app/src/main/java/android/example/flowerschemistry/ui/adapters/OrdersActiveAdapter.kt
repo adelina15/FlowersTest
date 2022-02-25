@@ -3,6 +3,7 @@ package android.example.flowerschemistry.ui.adapters
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemYourOrderActiveBinding
 import android.example.flowerschemistry.models.YourOrder
+import android.example.flowerschemistry.ui.utils.OnItemClickListenerYourOrder
 import android.example.flowerschemistry.ui.utils.OrdersActiveDiffUtil
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class OrdersActiveAdapter: RecyclerView.Adapter<OrdersActiveAdapter.OrdersActiveViewHolder>() {
 
-    private var list = mutableListOf<YourOrder>()
+class OrdersActiveAdapter(var list: ArrayList <YourOrder>, val clickListener: OnItemClickListenerYourOrder):
+    RecyclerView.Adapter<OrdersActiveAdapter.OrdersActiveViewHolder>() {
 
     fun setList(newList: MutableList<YourOrder>){
         val diffCallback = OrdersActiveDiffUtil(list, newList)
@@ -25,12 +26,16 @@ class OrdersActiveAdapter: RecyclerView.Adapter<OrdersActiveAdapter.OrdersActive
 
     class OrdersActiveViewHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemYourOrderActiveBinding.bind(item)
-        fun bind(item: YourOrder) = with(binding){
+        fun bind(item: YourOrder,  action:OnItemClickListenerYourOrder) = with(binding){
             ivIcon.setImageResource(item.img)
             tvTitle.text = item.name
             tvPrice.text = item.price.toString()
             tvDate.text = item.date
             tvAddress.text = item.address
+
+            itemView.setOnClickListener{
+                action.onItemClick(item)
+            }
         }
     }
 
@@ -40,8 +45,8 @@ class OrdersActiveAdapter: RecyclerView.Adapter<OrdersActiveAdapter.OrdersActive
         return OrdersActiveViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: OrdersActiveAdapter.OrdersActiveViewHolder, position: Int) {
-       holder.bind(list[position])
+    override fun onBindViewHolder(holder: OrdersActiveViewHolder, position: Int) {
+       holder.bind(list[position], clickListener)
     }
 
     override fun getItemCount(): Int {

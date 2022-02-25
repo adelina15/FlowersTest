@@ -55,8 +55,8 @@ dependencies {
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
 
     // Navigation Components
-    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0"
-    implementation "androidx.navigation:navigation-ui-ktx:2.4.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
 
     //Firebase
     implementation 'com.google.firebase:firebase-database-ktx:20.0.3'

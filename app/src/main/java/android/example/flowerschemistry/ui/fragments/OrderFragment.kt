@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.example.flowerschemistry.models.ToOrder
 import android.example.flowerschemistry.ui.adapters.ToOrderAdapter
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 
@@ -54,6 +55,8 @@ class OrderFragment : Fragment() {
         }
 
         setUpRecyclerView()
+
+        binding.imBtnBack.setOnClickListener { findNavController().navigateUp() }
 
         return view
     }

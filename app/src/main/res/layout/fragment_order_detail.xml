@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.BouquetFragment">
+    tools:context=".ui.fragments.OrderDetailFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/start_guideline"
@@ -53,8 +53,6 @@
 
     <TextView
         android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         style="@style/TextView_18sp_medium"
         android:text="13.08.2021"
@@ -64,8 +62,6 @@
 
     <TextView
         android:id="@+id/tv_name1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         style="@style/TextView_18sp_medium"
         android:text="Букет Гармония"
@@ -74,8 +70,6 @@
 
     <TextView
         android:id="@+id/tv_name1_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         style="@style/TextView_18sp_medium"
         android:text="2000"
@@ -85,8 +79,6 @@
 
     <TextView
         android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/TextView_18sp_medium"
         android:text="@string/som"
         app:layout_constraintBottom_toBottomOf="@+id/tv_name1"
@@ -95,8 +87,6 @@
 
     <TextView
         android:id="@+id/tv_name2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         style="@style/TextView_18sp_medium"
         android:text="Рафаэло"
@@ -105,8 +95,6 @@
 
     <TextView
         android:id="@+id/tv_name2_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         style="@style/TextView_18sp_medium"
         android:text="500"
@@ -116,8 +104,6 @@
 
     <TextView
         android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/TextView_18sp_medium"
         android:text="@string/som"
         app:layout_constraintBottom_toBottomOf="@+id/tv_name2"
@@ -126,8 +112,6 @@
 
     <TextView
         android:id="@+id/tv_subtotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         style="@style/TextView_18sp_medium"
         android:text="@string/subtotal"
@@ -136,8 +120,6 @@
 
     <TextView
         android:id="@+id/tv_subtotal_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         style="@style/TextView_18sp_medium"
         android:text="2000"
@@ -147,8 +129,6 @@
 
     <TextView
         android:id="@+id/tv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/TextView_18sp_medium"
         android:text="@string/som"
         app:layout_constraintBottom_toBottomOf="@+id/tv_subtotal_sum"
@@ -157,8 +137,6 @@
 
     <TextView
         android:id="@+id/tv_discounts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
         style="@style/TextView_18sp_medium"
         android:text="@string/discount"
@@ -178,8 +156,6 @@
 
     <TextView
         android:id="@+id/tv4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/TextView_18sp_medium"
         android:text="@string/som"
         app:layout_constraintBottom_toBottomOf="@+id/tv_discounts_sum"
@@ -188,8 +164,6 @@
 
     <TextView
         android:id="@+id/tv_delivery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         style="@style/TextView_18sp_medium"
         android:text="@string/delivery"
@@ -198,8 +172,6 @@
 
     <TextView
         android:id="@+id/tv_delivery_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         style="@style/TextView_18sp_medium"
         android:text="-200"
@@ -209,8 +181,6 @@
 
     <TextView
         android:id="@+id/tv5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/TextView_18sp_medium"
         android:text="@string/som"
         app:layout_constraintBottom_toBottomOf="@+id/tv_delivery_sum"
@@ -229,8 +199,6 @@
 
     <TextView
         android:id="@+id/tv_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         style="@style/TextView_18sp_medium"
         android:text="@string/total"
@@ -240,8 +208,6 @@
 
     <TextView
         android:id="@+id/tv_total_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         style="@style/TextView_18sp_medium"
         android:text="2050"
@@ -252,8 +218,6 @@
 
     <TextView
         android:id="@+id/tv6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/TextView_18sp_medium"
         android:textStyle="bold"
         android:text="@string/som"

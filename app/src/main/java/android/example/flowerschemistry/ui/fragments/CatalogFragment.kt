@@ -1,21 +1,20 @@
 package android.example.flowerschemistry.ui.fragments
 
-import android.content.Intent
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentCatalogBinding
 import android.example.flowerschemistry.models.BouquetCatalog
-import android.example.flowerschemistry.ui.AboutBouquet
 import android.example.flowerschemistry.ui.adapters.CatalogAdapter
-import android.example.flowerschemistry.ui.utils.OnItemClickListener
+import android.example.flowerschemistry.ui.utils.OnItemClickListenerCatalog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 
 
-class CatalogFragment : Fragment(), OnItemClickListener {
+class CatalogFragment : Fragment(), OnItemClickListenerCatalog {
     private var _binding: FragmentCatalogBinding? = null
     private val binding get() = _binding!!
 
@@ -38,13 +37,11 @@ class CatalogFragment : Fragment(), OnItemClickListener {
         _binding = FragmentCatalogBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.rvCatalog.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvCatalog.adapter = CatalogAdapter(itemListCatalog, this)
-
         binding.slider.setLabelFormatter {
             getString(R.string.label_format, it)
         }
 
+        setupRecyclerViewCatalog()
 
         return view
 
@@ -56,11 +53,19 @@ class CatalogFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onItemClick(item: BouquetCatalog) {
-        /*Toast.makeText(requireContext(), item.name , Toast.LENGTH_SHORT).show()*/
-        val intent = Intent(requireContext(), AboutBouquet::class.java)
+        findNavController().navigate(R.id.action_catalogFragment_to_bouquetFragment)
+
+        /*val intent = Intent(requireContext(), AboutBouquet::class.java)
         intent.putExtra("Name", item.name)
         intent.putExtra("Description", item.description)
         intent.putExtra("Image", item.img.toString())
-        startActivity(intent)
+        startActivity(intent)*/
+    }
+
+    private fun setupRecyclerViewCatalog(){
+        binding.rvCatalog.apply {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            adapter = CatalogAdapter(itemListCatalog, this@CatalogFragment)
+        }
     }
 }

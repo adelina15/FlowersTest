@@ -4,14 +4,14 @@ import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardCatalogBinding
 import android.example.flowerschemistry.models.BouquetCatalog
 import android.example.flowerschemistry.ui.utils.CatalogDiffUtil
-import android.example.flowerschemistry.ui.utils.OnItemClickListener
+import android.example.flowerschemistry.ui.utils.OnItemClickListenerCatalog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class CatalogAdapter(var list: ArrayList <BouquetCatalog>, val clickListener: OnItemClickListener)
+class CatalogAdapter(var list: ArrayList <BouquetCatalog>, val clickListener: OnItemClickListenerCatalog)
     : RecyclerView.Adapter<CatalogAdapter.CardsViewHolder>() {
 
     fun setList(newList: MutableList<BouquetCatalog>){
@@ -24,7 +24,7 @@ class CatalogAdapter(var list: ArrayList <BouquetCatalog>, val clickListener: On
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = ItemCardCatalogBinding.bind(item)
-        fun bind(card:BouquetCatalog, action:OnItemClickListener) = with(binding){
+        fun bind(card:BouquetCatalog, action:OnItemClickListenerCatalog) = with(binding){
             ivBouquetCatalog.setImageResource(card.img)
             tvBouquetName.text = card.name
             tvBouquetDescription.text = card.description_flowers

@@ -11,6 +11,7 @@ import android.example.flowerschemistry.ui.RegistrationSmsCodeActivity
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 
 class ProfileFragment : Fragment() {
@@ -28,6 +29,8 @@ class ProfileFragment : Fragment() {
             val intent = Intent(requireContext(), RegistrationSmsCodeActivity::class.java)
             startActivity(intent)
         }
+
+        binding.imBtnBack.setOnClickListener { findNavController().navigateUp() }
 
         return view
     }

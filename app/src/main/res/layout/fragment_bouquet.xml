@@ -133,15 +133,9 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_to_order"
-        android:layout_width="0dp"
-        android:layout_height="43dp"
+        style="@style/general_button"
         android:layout_marginBottom="51dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/roboto_medium"
         android:text="@string/to_order"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline" />
