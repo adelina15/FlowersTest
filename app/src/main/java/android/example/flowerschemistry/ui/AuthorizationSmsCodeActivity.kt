@@ -3,7 +3,9 @@ package android.example.flowerschemistry.ui
 
 import android.app.Activity
 import android.content.Intent
+import android.example.flowerschemistry.api.RetrofitInstance
 import android.example.flowerschemistry.databinding.ActivityAuthorizationSmscodeBinding
+import android.example.flowerschemistry.models.User
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -12,6 +14,9 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.concurrent.TimeUnit
 
 class AuthorizationSmsCodeActivity : AppCompatActivity() {
@@ -21,6 +26,7 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private val number by lazy { intent.getStringExtra("phoneNumber") }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthorizationSmscodeBinding.inflate(layoutInflater)
@@ -32,6 +38,12 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
 
         binding.tvPhoneNumber.text = number.toString()
         startTimer()
+
+        // Кнопка отправляет обратоно смс код и заноно запускает таймер
+        binding.tvSkip.setOnClickListener {
+            sendVerificationCode()
+            startTimer()
+        }
 
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -60,7 +72,19 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
 
         sendVerificationCode()
 
-        
+        /*RetrofitInstance.api.createUser(number!!)
+            .enqueue(object: Callback<User>{
+                override fun onResponse(call: Call<User>, response: Response<User>) {
+                    Toast.makeText(applicationContext, response.body()!!.number, Toast.LENGTH_LONG).show()
+                }
+
+                override fun onFailure(call: Call<User>, t: Throwable) {
+                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                }
+
+            })*/
+
+
         // заполняем otp и вызывем по нажатии на кнопку
         binding.btnNext.setOnClickListener {
             val otp = binding.pinView.text?.trim().toString()
@@ -73,10 +97,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
             }
         }
 
-        binding.tvSkip.setOnClickListener {
-            resendOTP(this, number.toString())
-            startTimer()
-        }
 
         binding.linearLayoutBack.setOnClickListener {
             onBackPressed()
@@ -120,7 +140,7 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
             }
     }
 
-    private fun resendOTP(activity: Activity, number: String){
+    /*private fun resendOTP(activity: Activity, number: String){
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber(number) // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
@@ -129,7 +149,7 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
             .setForceResendingToken(resendToken!!) // ForceResendingToken from callbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
-    }
+    }*/
 
     // Зпуск таймера чтобы пользователь за 60 сек ввел смс код
     private fun startTimer() {

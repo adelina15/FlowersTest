@@ -27,10 +27,10 @@
 
         <TextView
             android:id="@+id/tv_catalog"
+            style="@style/TextView_26sp_medium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            style="@style/TextView_26sp_medium"
             android:text="@string/catalog"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
@@ -44,7 +44,7 @@
             android:background="@drawable/search_view_background"
             android:iconifiedByDefault="false"
             android:queryBackground="@null"
-            android:queryHint="@string/search"
+            android:queryHint="Поиск"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/tv_catalog" />
@@ -54,18 +54,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
+            android:stepSize="100"
             android:valueFrom="500"
             android:valueTo="10000"
-            android:stepSize="100"
-            app:values="@array/rangeSlider"
-            app:thumbColor="@color/white"
-            app:thumbRadius="15dp"
-            app:trackHeight="10dp"
-            app:trackColorActive="@color/pink"
-            app:trackColorInactive="@color/text_color"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/searchView"/>
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            app:thumbColor="@color/white"
+            app:thumbRadius="15dp"
+            app:trackColorActive="@color/pink"
+            app:trackColorInactive="@color/text_color"
+            app:trackHeight="10dp"
+            app:values="@array/rangeSlider" />
 
 
         <TextView
@@ -77,6 +77,7 @@
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/slider" />
+
         <TextView
             android:id="@+id/tv_txt2"
             android:layout_width="wrap_content"
@@ -89,10 +90,10 @@
 
         <TextView
             android:id="@+id/tv_all_flowers"
+            style="@style/TextView_18sp_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            style="@style/TextView_18sp_medium"
             android:text="@string/all_flowers"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_txt1" />
@@ -104,7 +105,23 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_all_flowers"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_all_flowers" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress_bg"
+            android:progress="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.469"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>

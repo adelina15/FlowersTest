@@ -60,7 +60,9 @@
     <string name="order">Оформить заказ</string>
     <string name="sender">Отправитель</string>
     <string name="phone_number">Номер телефона</string>
+    <string name="phone_number1">Тел:</string>
     <string name="wishes">Ваши пожелания</string>
+    <string name="wishes1">Пожелания</string>
     <string name="recevier">Получатель</string>
     <string name="note">Записка</string>
     <string name="subtotal">Промежуточный итог</string>

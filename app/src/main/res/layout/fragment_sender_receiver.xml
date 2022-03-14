@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.MoreFragment">
+    tools:context=".ui.fragments.SenderReceiverFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/start_guideline"
@@ -21,77 +21,127 @@
         app:layout_constraintGuide_end="16dp" />
 
     <TextView
+        android:id="@+id/tv_title"
+        style="@style/TextView_26sp_medium"
+        android:layout_marginTop="26dp"
+        android:text="@string/order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:src="@drawable/ic_vector_49"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tv_sender"
-        android:layout_marginTop="40dp"
         style="@style/TextView_18sp_medium"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
         android:text="@string/sender"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_title_name"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_sender" />
+
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_name_sender"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sender"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_name"
         app:strokeColor="@color/grey"
         app:strokeWidth="1dp">
 
         <EditText
             android:id="@+id/ed_name_sender"
+            style="@style/TextView_18sp_medium"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            style="@style/TextView_18sp_medium"
             android:hint="@string/name"
             android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
+    <TextView
+        android:id="@+id/tv_title_phone_sender"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/phone_number1"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/cardview_name_sender" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_phone_sender"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/cardview_name_sender"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_phone_sender"
         app:strokeColor="@color/grey"
         app:strokeWidth="1dp">
 
         <EditText
             android:id="@+id/ed_phone_number"
+            style="@style/TextView_18sp_medium"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            style="@style/TextView_18sp_medium"
             android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:maxLength="13"
             android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_title_wishes"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/wishes1"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/cardview_phone_sender" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_wishes"
         android:layout_width="0dp"
         android:layout_height="66dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/cardview_phone_sender"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_wishes"
         app:strokeColor="@color/grey"
         app:strokeWidth="1dp">
 
         <EditText
             android:id="@+id/ed_wishes"
+            style="@style/TextView_18sp_medium"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            style="@style/TextView_18sp_medium"
             android:hint="@string/wishes"
             android:paddingStart="12dp" />
 
@@ -99,103 +149,111 @@
 
     <TextView
         android:id="@+id/tv_receiver"
-        android:layout_marginTop="40dp"
         style="@style/TextView_18sp_medium"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
         android:text="@string/recevier"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/cardview_wishes" />
+
+    <TextView
+        android:id="@+id/tv_title_name_receiver"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_receiver" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_name_receiver"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/tv_receiver"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_name_receiver"
         app:strokeColor="@color/grey"
         app:strokeWidth="1dp">
 
         <EditText
             android:id="@+id/ed_name_receiver"
+            style="@style/TextView_18sp_medium"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            style="@style/TextView_18sp_medium"
             android:hint="@string/name"
             android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
+    <TextView
+        android:id="@+id/tv_title_address_receiver"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/address1"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/cardview_name_receiver" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_address"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/cardview_name_receiver"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_address_receiver"
         app:strokeColor="@color/grey"
         app:strokeWidth="1dp">
 
         <EditText
             android:id="@+id/ed_address"
+            style="@style/TextView_18sp_medium"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            style="@style/TextView_18sp_medium"
             android:hint="@string/address1"
             android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
+    <TextView
+        android:id="@+id/tv_title_phone_receiver"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/phone_number1"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/cardview_address" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_phone_recevier"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/cardview_address"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_phone_receiver"
         app:strokeColor="@color/grey"
         app:strokeWidth="1dp">
 
         <EditText
             android:id="@+id/ed_phone_recevier"
+            style="@style/TextView_18sp_medium"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
-            style="@style/TextView_18sp_medium"
             android:hint="@string/phone_number"
-            android:paddingStart="12dp"/>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardview_note"
-        android:layout_width="0dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="20dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toStartOf="@id/end_guideline"
-        app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/cardview_phone_recevier"
-        app:strokeColor="@color/grey"
-        app:strokeWidth="1dp">
-
-        <EditText
-            android:id="@+id/ed_note"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"
-            style="@style/TextView_18sp_medium"
-            android:hint="@string/note"
+            android:inputType="phone"
+            android:maxLength="13"
             android:paddingStart="12dp" />
 
     </com.google.android.material.card.MaterialCardView>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_to_order"

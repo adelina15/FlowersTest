@@ -3,8 +3,8 @@ package android.example.flowerschemistry.ui.fragments
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentBasketBinding
-
 import android.example.flowerschemistry.models.BouquetCatalog
+
 import android.example.flowerschemistry.ui.adapters.BasketAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -71,9 +71,9 @@ class BasketFragment : Fragment() {
         _binding = FragmentBasketBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.btnGoToCatalog.setOnClickListener {
+        binding.btnToOrder.setOnClickListener {
             Navigation.findNavController(view)
-                .navigate(R.id.action_basketFragment_to_catalogFragment)
+                .navigate(R.id.action_basketFragment_to_bouquetFragment)
         }
 
         setUpRecyclerViewBasket()

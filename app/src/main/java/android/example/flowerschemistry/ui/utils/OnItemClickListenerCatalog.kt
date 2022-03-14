@@ -1,8 +1,7 @@
 package android.example.flowerschemistry.ui.utils
 
-import android.example.flowerschemistry.models.BouquetCatalog
-import android.example.flowerschemistry.models.YourOrder
+import android.example.flowerschemistry.models.BouquetCatalogItem
 
 interface OnItemClickListenerCatalog {
-    fun onItemClick(item: BouquetCatalog)
+    fun onItemClick(item: BouquetCatalogItem)
 }

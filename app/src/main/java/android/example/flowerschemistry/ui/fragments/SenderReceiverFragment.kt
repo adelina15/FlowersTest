@@ -13,6 +13,7 @@ import android.example.flowerschemistry.ui.MainActivity
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 
 
 class SenderReceiverFragment : Fragment() {
@@ -26,8 +27,27 @@ class SenderReceiverFragment : Fragment() {
         _binding =   FragmentSenderReceiverBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        binding.ivBack.setOnClickListener { findNavController().navigateUp() }
+
         //AlertDialog о том, что заказ принят
-       binding.btnToOrder.setOnClickListener {
+        binding.btnToOrder.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext(),R.style.CustomAlertDialog)
+                .create()
+            val view = layoutInflater.inflate(R.layout.alert_dialog_order_accepted,null)
+            builder.setView(view)
+            view.findViewById<Button>(R.id.btn_go_to_home).setOnClickListener {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+            }
+
+            view.findViewById<ImageView>(R.id.iv_close).setOnClickListener {
+                builder.dismiss()
+            }
+
+            builder.setCanceledOnTouchOutside(false)
+            builder.show()
+        }
+       /*binding.btnToOrder.setOnClickListener {
            val view = View.inflate(requireContext(), R.layout.alert_dialog_order_accepted, null)
            val builder = AlertDialog.Builder(requireContext())
            builder.setView(view)
@@ -44,7 +64,7 @@ class SenderReceiverFragment : Fragment() {
            view.findViewById<ImageView>(R.id.iv_close).setOnClickListener {
                dialog.dismiss()
            }
-       }
+       }*/
 
         return view
     }

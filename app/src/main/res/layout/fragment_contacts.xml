@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_text" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_phoneNumber_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,6 +70,7 @@
         android:text="+996 777 123 456"
         android:autoLink="phone"
         android:linksClickable="true"
+        android:selectAllOnFocus="true"
         android:textColorLink="@color/black"
         app:layout_constraintStart_toEndOf="@+id/iv_phone"
         app:layout_constraintTop_toTopOf="@+id/iv_phone" />
@@ -83,6 +84,7 @@
         android:text="+996 700 123 456"
         android:linksClickable="true"
         android:autoLink="phone"
+        android:selectAllOnFocus="true"
         android:textColorLink="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_phoneNumber_1"
         app:layout_constraintTop_toBottomOf="@+id/tv_phoneNumber_1" />
@@ -105,6 +107,7 @@
         android:text="@string/email"
         android:autoLink="email"
         android:textColorLink="@color/black"
+        android:selectAllOnFocus="true"
         app:layout_constraintBottom_toBottomOf="@+id/iv_email"
         app:layout_constraintStart_toEndOf="@+id/iv_email"
         app:layout_constraintTop_toTopOf="@+id/iv_email" />
@@ -125,6 +128,8 @@
         android:layout_marginStart="20dp"
         style="@style/TextView_16sp_medium"
         android:text="@string/address"
+        android:autoLink="map"
+        android:selectAllOnFocus="true"
         app:layout_constraintStart_toEndOf="@+id/iv_location"
         app:layout_constraintTop_toTopOf="@+id/iv_location" />
 

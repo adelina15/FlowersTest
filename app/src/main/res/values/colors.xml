@@ -15,4 +15,6 @@
     <color name="yellow">#F7CC05</color>
     <color name="text_color">#CCCCCC</color>
     <color name="btn">#7F7F7F</color>
+    <color name="txt_grey">#9E9E9E</color>
+    <color name="green">#84DE1F</color>
 </resources>

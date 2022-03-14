@@ -38,17 +38,15 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.isEnabled = false
-        val editTexts = listOf(binding.edName, binding.edTextPhone, binding.edTextEmail)
+        val editTexts = listOf(binding.edName, binding.edTextPhone)
         for (editText in editTexts) {
             editText.addTextChangedListener(object : TextWatcher {
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                     var et1 = binding.edName.text.toString().trim()
                     var et2 = binding.edTextPhone.text.toString().trim()
-                    var et3 = binding.edTextEmail.text.toString().trim()
 
                     binding.btnSave.isEnabled = et1.isNotEmpty()
                             && et2.isNotEmpty()
-                            && et3.isNotEmpty()
 
                 }
 

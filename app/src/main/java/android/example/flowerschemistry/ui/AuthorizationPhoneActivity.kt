@@ -1,12 +1,17 @@
 package android.example.flowerschemistry.ui
 
 import android.content.Intent
+import android.example.flowerschemistry.api.RetrofitInstance
 import android.example.flowerschemistry.databinding.ActivityAuthorizationPhoneBinding
+import android.example.flowerschemistry.models.User
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class AuthorizationPhoneActivity : AppCompatActivity() {
@@ -25,18 +30,18 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
 
         auth=FirebaseAuth.getInstance()
 
+
+
         binding.btnNext.setOnClickListener {
             login()
         }
+
+
 
         binding.tvSkip.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-       /* binding.btnNext.setOnClickListener {
-            validatePhone()
-        }*/
     }
 
     private fun login() {
@@ -50,6 +55,8 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
         }else{
             Toast.makeText(this,"Введите номер телефона", Toast.LENGTH_SHORT).show()
         }
+
+
     }
 
 

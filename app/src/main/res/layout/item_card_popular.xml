@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="7dp"
-            android:src="@drawable/ic_favorites_red"
+            android:src="@drawable/ic_favorites_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,32 +55,35 @@
 
         <TextView
             android:id="@+id/tv_bouquet_name"
+            style="@style/TextView_13sp_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="7dp"
-            style="@style/TextView_13sp_medium"
             android:text="Букет осенний блюз"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_bouquet_popular" />
 
         <TextView
             android:id="@+id/tv_bouquet_description"
+            style="@style/TextView_11sp_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            style="@style/TextView_11sp_medium"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
             android:text="Розы, ромашки, лилии"
-            app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_name"
-            app:layout_constraintStart_toStartOf="@+id/tv_bouquet_name"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_name" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="144dp"
             android:layout_height="32dp"
             android:layout_marginTop="17dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_bouquet_description"
-            app:layout_constraintStart_toStartOf="@+id/tv_bouquet_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_bouquet_description">
 
             <ImageButton

@@ -43,7 +43,7 @@ class FavoritesFragment : Fragment() {
         binding.btnGoToCatalog.setOnClickListener { Navigation.findNavController(view)
             .navigate(R.id.action_favoritesFragment_to_catalogFragment) }
 
-        setUpRecyclerViewFavorites()
+        //setUpRecyclerViewFavorites()
         return view
 
     }

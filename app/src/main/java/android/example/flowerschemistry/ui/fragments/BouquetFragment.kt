@@ -7,16 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.databinding.FragmentBouquetBinding
-import android.example.flowerschemistry.ui.adapters.SliderAdapter
 import androidx.navigation.fragment.findNavController
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
-import com.smarteist.autoimageslider.SliderAnimations
 
 
 class BouquetFragment : Fragment() {
     private var _binding: FragmentBouquetBinding? = null
     private val binding get() = _binding!!
-    private var images = intArrayOf(R.drawable.image_slider1, R.drawable.image_slider2, R.drawable.image_slider3)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,12 +20,6 @@ class BouquetFragment : Fragment() {
     ): View? {
         _binding = FragmentBouquetBinding.inflate(inflater, container, false)
         val view = binding.root
-
-        val sliderAdapter = SliderAdapter(images)
-        binding.sliderView.setSliderAdapter(sliderAdapter)
-        binding.sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
-        binding.sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
-        binding.sliderView.startAutoCycle()
 
         binding.imBtnBack.setOnClickListener { findNavController().navigateUp() }
 
