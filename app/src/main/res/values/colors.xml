@@ -11,10 +11,12 @@
     <color name="red">#FD0C0C</color>
     <color name="grey">#1F767680</color>
     <color name="blue">#B6F2E5</color>
-    <color name="pink_dark">#E33C52</color>
+    <color name="pink_dark">#C11F96</color>
     <color name="yellow">#F7CC05</color>
     <color name="text_color">#CCCCCC</color>
     <color name="btn">#7F7F7F</color>
+    <color name="img_btn">#7E7E7E</color>
+    <color name="btn_1">#F7F5F6</color>
     <color name="txt_grey">#9E9E9E</color>
     <color name="green">#84DE1F</color>
 </resources>

@@ -1,11 +1,8 @@
 package android.example.flowerschemistry.ui
 
 
-import android.app.Activity
 import android.content.Intent
-import android.example.flowerschemistry.api.RetrofitInstance
 import android.example.flowerschemistry.databinding.ActivityAuthorizationSmscodeBinding
-import android.example.flowerschemistry.models.User
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -14,16 +11,13 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.util.concurrent.TimeUnit
 
 class AuthorizationSmsCodeActivity : AppCompatActivity() {
     lateinit var binding: ActivityAuthorizationSmscodeBinding
     lateinit var auth: FirebaseAuth
     private var id: String = ""
-    lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
+    //lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private val number by lazy { intent.getStringExtra("phoneNumber") }
 
@@ -73,15 +67,13 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
         sendVerificationCode()
 
         /*RetrofitInstance.api.createUser(number!!)
-            .enqueue(object: Callback<User>{
+            .execute(object: Callback<User>{
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     Toast.makeText(applicationContext, response.body()!!.number, Toast.LENGTH_LONG).show()
                 }
-
                 override fun onFailure(call: Call<User>, t: Throwable) {
                     Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
-
             })*/
 
 
@@ -164,4 +156,3 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
         }.start()
     }
 }
-

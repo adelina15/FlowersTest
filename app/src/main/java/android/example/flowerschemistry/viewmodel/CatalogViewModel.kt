@@ -1,29 +1,25 @@
 package android.example.flowerschemistry.viewmodel
 
-import android.example.flowerschemistry.models.BouquetCatalogItem
+import android.example.flowerschemistry.models.BouquetCatalogItemItem
 import android.example.flowerschemistry.repository.Repository
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import androidx.lifecycle.*
+import kotlinx.coroutines.launch
 
-class CatalogViewModel(private val repository: Repository): ViewModel() {
+class CatalogViewModel(private val repository: Repository): ViewModel(), DefaultLifecycleObserver {
 
-    val catalogResponse = MutableLiveData<List<BouquetCatalogItem>>()
-    val errorMessage = MutableLiveData<String>()
-    //val catalogResponse: LiveData<Response<BouquetCatalogItem>> get() = _catalogResponse
+   val catalogLiveData = MutableLiveData<ArrayList<BouquetCatalogItemItem>>()
 
-   fun getCatalog(){
-       val response = repository.getBouquetCatalog()
-       response.enqueue(object : Callback<List<BouquetCatalogItem>> {
-           override fun onResponse(call: Call<List<BouquetCatalogItem>>, response: Response<List<BouquetCatalogItem>>) {
-               catalogResponse.postValue(response.body())
-           }
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+        getCatalogBouquet()
+    }
 
-           override fun onFailure(call: Call<List<BouquetCatalogItem>>, t: Throwable) {
-               errorMessage.postValue(t.message)
-           }
-       })
+    fun getCatalogBouquet(){
+        viewModelScope.launch {
+            val response = repository.getBouquetCatalog()
+            if (response.isSuccessful){
+                catalogLiveData.postValue(response.body())
+            }
+        }
     }
 }

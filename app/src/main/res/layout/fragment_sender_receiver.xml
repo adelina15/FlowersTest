@@ -24,7 +24,7 @@
         android:id="@+id/tv_title"
         style="@style/TextView_26sp_medium"
         android:layout_marginTop="26dp"
-        android:text="@string/order"
+        android:text="Заполните данные"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
         android:id="@+id/tv_title_phone_sender"
         style="@style/TextView_12sp_grey"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="14dp"
         android:text="@string/phone_number1"
         app:layout_constraintStart_toStartOf="@id/start_guideline"
         app:layout_constraintTop_toBottomOf="@id/cardview_name_sender" />

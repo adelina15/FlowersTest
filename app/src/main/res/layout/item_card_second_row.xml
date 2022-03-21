@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            style="@style/TextView_18sp_medium"
+            style="@style/TextView_24sp_medium"
             android:text="Для девушки"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

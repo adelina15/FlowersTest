@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            style="@style/TextView_16sp_medium"
-            android:text="Для день рождения"
+            style="@style/TextView_14sp_medium"
+            android:text="На день рождения"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

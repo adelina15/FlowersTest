@@ -28,8 +28,8 @@
             android:id="@+id/im_btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="34dp"
             android:src="@drawable/ic_vector_49"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
             android:layout_marginStart="38dp"
             android:layout_marginTop="20dp"
             style="@style/TextView_26sp_medium"
-            android:text="@string/order"
+            android:text="@string/your_basket"
             app:layout_constraintStart_toEndOf="@+id/im_btn_back"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,11 +56,12 @@
 
         <TextView
             android:id="@+id/tv_subtotal"
+            style="@style/TextView_18sp_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="32dp"
-            style="@style/TextView_18sp_medium"
-            android:text="@string/subtotal"
+            android:text="@string/sum"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/rv_to_order" />
 
@@ -87,10 +88,11 @@
 
         <TextView
             android:id="@+id/tv_discounts"
+            style="@style/TextView_18sp_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="38dp"
-            style="@style/TextView_18sp_medium"
             android:text="@string/discount"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/tv_subtotal" />
@@ -127,9 +129,10 @@
 
             <TextView
                 android:id="@+id/tv_delivery"
+                style="@style/TextView_18sp_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextView_18sp_medium"
+                android:layout_marginStart="2dp"
                 android:text="@string/delivery"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +184,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/line"
             android:layout_width="0dp"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:layout_marginTop="11dp"
             android:background="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
@@ -190,10 +193,11 @@
 
         <TextView
             android:id="@+id/tv_total"
+            style="@style/TextView_18sp_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="20dp"
-            style="@style/TextView_18sp_medium"
             android:text="@string/total"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/line" />
@@ -219,51 +223,48 @@
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
             app:layout_constraintTop_toTopOf="@+id/tv_total_sum" />
 
-        <Button
+        <RadioButton
             android:id="@+id/btn_pickup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="23dp"
-            android:paddingBottom="11dp"
-            android:paddingTop="10dp"
-            android:paddingStart="27dp"
-            android:paddingEnd="18dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="37dp"
+            android:paddingStart="15dp"
             android:backgroundTint="@color/button_background_color"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="@font/roboto"
             android:text="@string/pickup"
             android:textAllCaps="false"
-            android:textColor="@color/button_text_color"
+            android:textColor="@color/black"
             android:textSize="18sp"
+            android:buttonTint="@drawable/radiobutton"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/tv_total" />
 
 
-        <Button
+        <RadioButton
             android:id="@+id/btn_delivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="11dp"
-            android:paddingStart="36dp"
-            android:paddingEnd="29dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="36dp"
+            android:paddingStart="15dp"
             android:backgroundTint="@color/button_background_color"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="@font/roboto"
             android:text="@string/delivery"
             android:textAllCaps="false"
-            android:textColor="@color/button_text_color"
+            android:textColor="@color/black"
             android:textSize="18sp"
+            android:buttonTint="@drawable/radiobutton"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintHorizontal_bias="0.574"
             app:layout_constraintStart_toEndOf="@+id/btn_pickup"
             app:layout_constraintTop_toBottomOf="@+id/tv_total_sum" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_order"
             style="@style/general_button"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="63dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/to_order"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/end_guideline"

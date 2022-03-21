@@ -37,7 +37,7 @@
     <string name="all_flowers">Все цветы</string>
     <string name="label_format">%1$.0f сом</string>
     <string name="authorization">Авторизоваться</string>
-    <string name="go_to_authorization">Чтобы добавить товар в избранное пожалуйста пройдите авторизацию</string>
+    <string name="go_to_authorization">Зарегистрируйтесь чтобы добавлять букеты в избранное</string>
 
     <string-array name="rangeSlider">
         <item>500</item>
@@ -74,9 +74,10 @@
     <string name="order_accepted_text">Ожидайте звонка администратора для потверждения заказа</string>
     <string name="go_to_home">Перейти на главную</string>
     <string name="go_to_catalog">Перейти в каталог</string>
-    <string name="your_basket">Ваша корзина</string>
     <string name="your_orders">Ваши заказы</string>
     <string name="active">Активные</string>
     <string name="completed">Завершенные</string>
+    <string name="your_basket">Ваша корзина</string>
+    <string name="sum">Сумма</string>
 
 </resources>

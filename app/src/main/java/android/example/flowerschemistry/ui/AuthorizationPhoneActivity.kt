@@ -1,17 +1,12 @@
 package android.example.flowerschemistry.ui
 
 import android.content.Intent
-import android.example.flowerschemistry.api.RetrofitInstance
 import android.example.flowerschemistry.databinding.ActivityAuthorizationPhoneBinding
-import android.example.flowerschemistry.models.User
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class AuthorizationPhoneActivity : AppCompatActivity() {
@@ -31,11 +26,9 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
         auth=FirebaseAuth.getInstance()
 
 
-
         binding.btnNext.setOnClickListener {
             login()
         }
-
 
 
         binding.tvSkip.setOnClickListener {
@@ -48,7 +41,7 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
         //получить номер телефона из editText
         number = binding.edTextPhone.text.trim().toString()
         if (number.isNotEmpty()){
-           // sendVerificationCode(number)
+            // sendVerificationCode(number)
             val intent = Intent(this, AuthorizationSmsCodeActivity::class.java)
             intent.putExtra("phoneNumber", number)
             startActivity(intent)
@@ -58,19 +51,4 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
 
 
     }
-
-
-
-    /*?private fun validatePhone(): Boolean {
-        val phoneInput = binding.edTextPhone.text.toString()
-        return if (phoneInput.length == 9 ) {
-            val intent = Intent(this, AuthorizationSmsCodeActivity::class.java)
-            startActivity(intent)
-            true
-        } else {
-            Toast.makeText(this, "Введите номер телефона полностью", Toast.LENGTH_LONG).show()
-            false
-        }
-    }*/
-
 }

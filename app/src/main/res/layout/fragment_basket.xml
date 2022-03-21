@@ -34,6 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/your_basket"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +54,7 @@
                     android:id="@+id/iv_basket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="198dp"
+                    android:layout_marginTop="211dp"
                     android:src="@drawable/ic_basket_image"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -80,23 +81,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_to_order"
-                style="@style/general_button"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="@string/order"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/contenier"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_go_to_catalog"
                 style="@style/general_button"
                 android:text="@string/go_to_catalog"
                 android:visibility="visible"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 

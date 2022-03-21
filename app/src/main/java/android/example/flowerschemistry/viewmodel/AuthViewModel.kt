@@ -9,9 +9,9 @@ import kotlinx.coroutines.launch
 
 class AuthViewModel(private val repository: Repository): ViewModel() {
 
-    val userCreated = MutableLiveData<User>()
+   // val userCreated = MutableLiveData<User>()
 
-    fun sendUserData(){
-        val response = repository.createUser(userCreated)
-    }
+   // fun sendUserData(){
+   //     val response = repository.createUser(userCreated)
+    //}
 }
