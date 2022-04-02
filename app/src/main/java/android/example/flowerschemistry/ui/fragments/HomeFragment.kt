@@ -13,13 +13,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.models.Card
 import android.example.flowerschemistry.ui.adapters.*
+import android.example.flowerschemistry.viewmodel.BouquetDiscountViewModel
+import android.example.flowerschemistry.viewmodel.BouquetPopularViewModel
+import android.example.flowerschemistry.viewmodel.BouquetRecommendationViewModel
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private val recommendationViewModel by viewModel<BouquetRecommendationViewModel>()
+    private val popularViewModel by viewModel<BouquetPopularViewModel>()
+    private val discountViewModel by viewModel<BouquetDiscountViewModel>()
     private val adapterFirstRow by lazy{ CardsFirstRowAdapter() }
     private val adapterSecondRow by lazy{ CardsSecondRowAdapter() }
     private val adapterThirdRow by lazy{ CardsThirdRowAdapter() }
@@ -47,29 +54,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    private val itemListBouquetRecommendation by lazy {
-        mutableListOf(
-            BouquetRecommendation(1, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet ),
-            BouquetRecommendation(2, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet ),
-            BouquetRecommendation(3, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet )
-        )
-    }
 
-    private val itemListBouquetDiscounts by lazy {
-        mutableListOf(
-            BouquetDiscounts(1, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet),
-            BouquetDiscounts(2, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet),
-            BouquetDiscounts(3, "Букет осенний блюз", 999, "Розы, ромашки, лилии",R.drawable.bouquet)
-        )
-    }
-
-    private val itemListBouquetPopular by lazy {
-        mutableListOf(
-           BouquetPopular(1, "Букет осенний блюз",999, "Розы, ромашки, лилии",R.drawable.bouquet),
-            BouquetPopular(2, "Букет осенний блюз",999, "Розы, ромашки, лилии",R.drawable.bouquet),
-            BouquetPopular(3, "Букет осенний блюз",999, "Розы, ромашки, лилии",R.drawable.bouquet)
-        )
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,40 +63,103 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.rvFirstRow.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvFirstRow.adapter = adapterFirstRow
-        adapterFirstRow.setList(itemListFirstRow)
-
-        binding.rvSecondRow.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvSecondRow.adapter = adapterSecondRow
-        adapterSecondRow.setList(itemListSecondRow)
-
-        binding.rvThirdRow.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvThirdRow.adapter = adapterThirdRow
-        adapterThirdRow.setList(itemListThirdRow)
-
-        binding.rvRecommended.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
-        binding.rvRecommended.adapter = adapterBouquetRecommendationAdapter
-        adapterBouquetRecommendationAdapter.setList(itemListBouquetRecommendation)
-
-        binding.rvDiscounts.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
-        binding.rvDiscounts.adapter = adapterBouquetDiscountsAdapter
-        adapterBouquetDiscountsAdapter.setList(itemListBouquetDiscounts)
-
-        binding.rvPopular.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
-        binding.rvPopular.adapter = adapterBouquetPopularAdapter
-        adapterBouquetPopularAdapter.setList(itemListBouquetPopular)
+        setUpRecyclerViewFirstRow()
+        setUpRecyclerViewSecondRow()
+        setUpRecyclerViewThirdRow()
 
         binding.btnToCatalog.setOnClickListener { Navigation.findNavController(view)
             .navigate(R.id.action_homeFragment_to_catalogFragment) }
+
+        binding.contenierAllRec.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_homeFragment_to_recommendationFragment)
+        }
+
+        binding.contenierAllPopular.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_homeFragment_to_popularFragment)
+        }
+
+        binding.contenierAllDiscount.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_homeFragment_to_discountsFragment)
+        }
 
         return view
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        lifecycle.addObserver(recommendationViewModel)
+        setUpRecyclerViewRecommended()
+        recommendationViewModel.recommendationLiveData.observe(viewLifecycleOwner){
+            adapterBouquetRecommendationAdapter.setList(it)
+        }
+
+        lifecycle.addObserver(popularViewModel)
+        setUpRecyclerViewPopular()
+        popularViewModel.popularLiveData.observe(viewLifecycleOwner){
+            adapterBouquetPopularAdapter.setList(it)
+        }
+
+        lifecycle.addObserver(discountViewModel)
+        setUpRecyclerViewDiscounts()
+        discountViewModel.discountLiveData.observe(viewLifecycleOwner){
+            adapterBouquetDiscountsAdapter.setList(it)
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+
+    private fun setUpRecyclerViewFirstRow() {
+        binding.rvFirstRow.apply {
+            adapter = adapterFirstRow
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+        adapterFirstRow.setList(itemListFirstRow)
+    }
+
+    private fun setUpRecyclerViewSecondRow() {
+        binding.rvSecondRow.apply {
+            adapter = adapterSecondRow
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+        adapterSecondRow.setList(itemListSecondRow)
+    }
+
+    private fun setUpRecyclerViewThirdRow() {
+        binding.rvThirdRow.apply {
+            adapter = adapterThirdRow
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+        adapterThirdRow.setList(itemListThirdRow)
+    }
+
+    private fun setUpRecyclerViewRecommended() {
+        binding.rvRecommended.apply {
+            adapter = adapterBouquetRecommendationAdapter
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+    }
+
+    private fun setUpRecyclerViewDiscounts() {
+        binding.rvDiscounts.apply {
+            adapter = adapterBouquetDiscountsAdapter
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+    }
+
+    private fun setUpRecyclerViewPopular() {
+        binding.rvPopular.apply {
+            adapter = adapterBouquetPopularAdapter
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
     }
 
 }

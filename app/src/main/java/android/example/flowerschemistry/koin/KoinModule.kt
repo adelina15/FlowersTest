@@ -3,7 +3,7 @@ package android.example.flowerschemistry.koin
 import android.example.flowerschemistry.Constants
 import android.example.flowerschemistry.api.InterfaceAPI
 import android.example.flowerschemistry.repository.Repository
-import android.example.flowerschemistry.viewmodel.CatalogViewModel
+import android.example.flowerschemistry.viewmodel.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.viewmodel.dsl.viewModel
@@ -22,6 +22,10 @@ val retrofitModule = module {
 
 val viewModules = module {
     viewModel { CatalogViewModel(repository = get()) }
+    viewModel { BouquetRecommendationViewModel(repository = get()) }
+    viewModel { BouquetPopularViewModel(repository = get()) }
+    viewModel { BouquetDiscountViewModel(repository = get()) }
+    viewModel { AuthViewModel(repository = get()) }
 }
 
 fun getOkHttp(): OkHttpClient {

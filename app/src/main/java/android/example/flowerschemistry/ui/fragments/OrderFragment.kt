@@ -21,10 +21,10 @@ class OrderFragment : Fragment() {
 
     private val itemListToOrder by lazy {
         mutableListOf(
-            ToOrder(1, "Грёзы", 2300, 2, R.drawable.img_basket),
-            ToOrder(2, "Рафаэло", 500, 1, R.drawable.img_basket),
-            ToOrder(3, "Букет осенний блюз", 4000, 3, R.drawable.image_slider3),
-            ToOrder(4, "Открытка", 100, 1, R.drawable.card3)
+            ToOrder(1, "Грёзы", 2300, 2, R.drawable.img_basket)
+            //ToOrder(2, "Рафаэло", 500, 1, R.drawable.img_basket),
+           // ToOrder(3, "Букет осенний блюз", 4000, 3, R.drawable.image_slider3),
+            //ToOrder(4, "Открытка", 100, 1, R.drawable.card3)
         )
     }
 

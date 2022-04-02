@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/start_guideline"
@@ -28,59 +29,53 @@
             android:id="@+id/im_btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="34dp"
             android:src="@drawable/ic_vector_49"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/my_orders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="3dp"
             android:layout_marginTop="20dp"
-            style="@style/TextView_26sp_medium"
-            android:text="@string/your_orders"
-            app:layout_constraintStart_toEndOf="@+id/im_btn_back"
+            android:fontFamily="@font/roboto"
+            android:text="Ваши заказы"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_active_order"
-            style="@style/TextView_18sp_medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/active"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_active_order"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/orders_tablayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="81dp"
+            android:background="@drawable/tab_layout_bg"
+            android:clipChildren="true"
+            android:clipToPadding="true"
             app:layout_constraintEnd_toStartOf="@+id/end_guideline"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_active_order" />
+            app:layout_constraintTop_toBottomOf="@+id/my_orders"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabBackground="@drawable/tabs_selector"
+            app:tabIndicator="@null"
+            app:tabPaddingEnd="10dp"
+            app:tabPaddingStart="10dp"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/pink" />
 
-        <TextView
-            android:id="@+id/tv_completed_order"
-            style="@style/TextView_18sp_medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/completed"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rv_active_order" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/orders_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orders_tablayout"
+            app:layout_constraintVertical_weight="1" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_completed_order"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_completed_order" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

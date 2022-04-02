@@ -3,33 +3,32 @@ package android.example.flowerschemistry.ui.adapters
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardDiscountsBinding
 import android.example.flowerschemistry.models.BouquetDiscounts
+import android.example.flowerschemistry.models.BouquetPopular
+import android.example.flowerschemistry.models.BouquetSelectionItem
 import android.example.flowerschemistry.ui.utils.DiscountsDiffUtil
-import android.example.flowerschemistry.ui.utils.RecommendationDiffUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class BouquetDiscountsAdapter : RecyclerView.Adapter<BouquetDiscountsAdapter.CardsViewHolder>() {
 
-    private var list = mutableListOf<BouquetDiscounts>()
+    private var list = mutableListOf<BouquetSelectionItem>()
 
-    fun setList(newList: MutableList<BouquetDiscounts>){
-        val diffCallback = DiscountsDiffUtil(list, newList)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        list.clear()
-        list.addAll(newList)
-        diffResult.dispatchUpdatesTo(this)
+    fun setList(newList: MutableList<BouquetSelectionItem>){
+        this.list = newList
+        notifyDataSetChanged()
     }
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = ItemCardDiscountsBinding.bind(item)
-        fun bind(card: BouquetDiscounts) = with(binding){
-            ivBouquetDiscounts.setImageResource(card.img)
+        fun bind(card: BouquetSelectionItem) = with(binding){
+            Glide.with(itemView.context).load(card.image).into(ivBouquetDiscounts)
             tvBouquetName.text = card.name
             tvBouquetDescription.text = card.description
-            tvPrice.text = card.price.toString()
+            tvPrice.text = card.cost.toString()
         }
     }
 

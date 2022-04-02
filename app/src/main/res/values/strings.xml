@@ -79,5 +79,6 @@
     <string name="completed">Завершенные</string>
     <string name="your_basket">Ваша корзина</string>
     <string name="sum">Сумма</string>
+    <string name="all">Все</string>
 
 </resources>

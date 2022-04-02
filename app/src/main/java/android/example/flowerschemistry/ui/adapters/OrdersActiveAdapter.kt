@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 
-class OrdersActiveAdapter(var list: ArrayList <YourOrder>, val clickListener: OnItemClickListenerYourOrder):
-    RecyclerView.Adapter<OrdersActiveAdapter.OrdersActiveViewHolder>() {
+class OrdersActiveAdapter: RecyclerView.Adapter<OrdersActiveAdapter.OrdersActiveViewHolder>() {
 
+    var list = ArrayList <YourOrder>()
     fun setList(newList: MutableList<YourOrder>){
         val diffCallback = OrdersActiveDiffUtil(list, newList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
@@ -26,16 +26,14 @@ class OrdersActiveAdapter(var list: ArrayList <YourOrder>, val clickListener: On
 
     class OrdersActiveViewHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemYourOrderActiveBinding.bind(item)
-        fun bind(item: YourOrder,  action:OnItemClickListenerYourOrder) = with(binding){
+        fun bind(item: YourOrder) = with(binding){
             ivIcon.setImageResource(item.img)
             tvTitle.text = item.name
             tvPrice.text = item.price.toString()
             tvDate.text = item.date
             tvAddress.text = item.address
 
-            itemView.setOnClickListener{
-                action.onItemClick(item)
-            }
+
         }
     }
 
@@ -46,7 +44,7 @@ class OrdersActiveAdapter(var list: ArrayList <YourOrder>, val clickListener: On
     }
 
     override fun onBindViewHolder(holder: OrdersActiveViewHolder, position: Int) {
-       holder.bind(list[position], clickListener)
+       holder.bind(list[position])
     }
 
     override fun getItemCount(): Int {

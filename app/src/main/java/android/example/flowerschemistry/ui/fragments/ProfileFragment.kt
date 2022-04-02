@@ -8,15 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.databinding.FragmentProfileBinding
 import android.example.flowerschemistry.ui.RegistrationSmsCodeActivity
+import android.example.flowerschemistry.viewmodel.AuthViewModel
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    private val userViewModel by viewModel<AuthViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,9 +29,12 @@ class ProfileFragment : Fragment() {
         _binding =  FragmentProfileBinding.inflate(inflater, container, false)
         val view = binding.root
 
-       binding.btnSave.setOnClickListener {
+       /*binding.btnSave.setOnClickListener {
             val intent = Intent(requireContext(), RegistrationSmsCodeActivity::class.java)
-            startActivity(intent)
+            startActivity(intent) }*/
+
+        binding.btnSave.setOnClickListener {
+
         }
 
         binding.imBtnBack.setOnClickListener { findNavController().navigateUp() }
@@ -35,7 +42,7 @@ class ProfileFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.isEnabled = false
         val editTexts = listOf(binding.edName, binding.edTextPhone)
@@ -59,5 +66,13 @@ class ProfileFragment : Fragment() {
                 }
             })
         }
+    }*/
+
+    private fun createUser(number: String, name: String) {
+        userViewModel.createUser(number, name)
+
+        }
+
     }
+
 }

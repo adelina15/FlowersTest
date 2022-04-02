@@ -63,7 +63,7 @@
         android:id="@+id/btn_contacts"
         style="@style/for_more_button"
         android:layout_marginTop="16dp"
-        android:drawableStart="@drawable/ic_phone"
+        android:drawableStart="@drawable/ic_phone_grey"
         android:drawableEnd="@drawable/ic_arrow_left"
         android:drawablePadding="14dp"
         android:text="@string/contacts"

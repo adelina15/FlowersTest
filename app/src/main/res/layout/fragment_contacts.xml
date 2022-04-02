@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.ContactsFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -32,22 +32,23 @@
 
     <TextView
         android:id="@+id/tv_contacts"
+        style="@style/TextView_26sp_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        style="@style/TextView_26sp_medium"
         android:text="@string/contact_us"
-        app:layout_constraintStart_toEndOf="@+id/im_btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_text"
+        style="@style/TextView_18sp_medium"
         android:layout_width="326dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="40dp"
         android:lines="2"
-        style="@style/TextView_18sp_medium"
         android:text="@string/same_text"
         app:layout_constraintStart_toStartOf="@id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_contacts" />
@@ -56,35 +57,44 @@
         android:id="@+id/iv_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="41dp"
         android:src="@drawable/ic_phone"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_text" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_phoneNumber_1"
+    <ImageView
+        android:id="@+id/iv_phone2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_phoneNumber_2"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toTopOf="@+id/tv_phoneNumber_2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_phoneNumber_1"
         style="@style/TextView_16sp_medium"
-        android:text="+996 777 123 456"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
         android:autoLink="phone"
         android:linksClickable="true"
         android:selectAllOnFocus="true"
+        android:text="+996 777 123 456"
         android:textColorLink="@color/black"
         app:layout_constraintStart_toEndOf="@+id/iv_phone"
         app:layout_constraintTop_toTopOf="@+id/iv_phone" />
 
     <TextView
         android:id="@+id/tv_phoneNumber_2"
+        style="@style/TextView_16sp_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        style="@style/TextView_16sp_medium"
-        android:text="+996 700 123 456"
-        android:linksClickable="true"
+        android:layout_marginTop="21dp"
         android:autoLink="phone"
+        android:linksClickable="true"
         android:selectAllOnFocus="true"
+        android:text="+996 700 123 456"
         android:textColorLink="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tv_phoneNumber_1"
         app:layout_constraintTop_toBottomOf="@+id/tv_phoneNumber_1" />
@@ -93,21 +103,21 @@
         android:id="@+id/iv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="89dp"
         android:src="@drawable/ic_email"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/iv_phone" />
 
     <TextView
         android:id="@+id/tv_email"
+        style="@style/TextView_16sp_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        style="@style/TextView_16sp_medium"
-        android:text="@string/email"
+        android:layout_marginStart="23dp"
         android:autoLink="email"
-        android:textColorLink="@color/black"
         android:selectAllOnFocus="true"
+        android:text="@string/email"
+        android:textColorLink="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/iv_email"
         app:layout_constraintStart_toEndOf="@+id/iv_email"
         app:layout_constraintTop_toTopOf="@+id/iv_email" />
@@ -116,20 +126,20 @@
         android:id="@+id/iv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="48dp"
         android:src="@drawable/ic_location"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/iv_email" />
 
     <TextView
         android:id="@+id/tv_location"
+        style="@style/TextView_16sp_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        style="@style/TextView_16sp_medium"
-        android:text="@string/address"
+        android:layout_marginStart="24dp"
         android:autoLink="map"
         android:selectAllOnFocus="true"
+        android:text="@string/address"
         app:layout_constraintStart_toEndOf="@+id/iv_location"
         app:layout_constraintTop_toTopOf="@+id/iv_location" />
 
@@ -137,29 +147,63 @@
         android:id="@+id/iv_telegram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="64dp"
         android:src="@drawable/ic_logo_telegram"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/iv_location" />
+
+    <TextView
+        android:id="@+id/tv_telegram"
+        style="@style/TextView_16sp_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:autoLink="map"
+        android:selectAllOnFocus="true"
+        android:text="Telegram"
+        app:layout_constraintStart_toEndOf="@+id/iv_telegram"
+        app:layout_constraintTop_toTopOf="@+id/iv_telegram"/>
 
     <ImageView
         android:id="@+id/iv_whatsapp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginTop="44dp"
         android:src="@drawable/ic_logo_whatsapp"
-        app:layout_constraintStart_toEndOf="@+id/iv_telegram"
-        app:layout_constraintTop_toTopOf="@+id/iv_telegram" />
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/iv_telegram" />
+
+    <TextView
+        android:id="@+id/tv_whatsapp"
+        style="@style/TextView_16sp_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:autoLink="map"
+        android:selectAllOnFocus="true"
+        android:text="WhatsApp"
+        app:layout_constraintStart_toEndOf="@+id/iv_whatsapp"
+        app:layout_constraintTop_toTopOf="@+id/iv_whatsapp"/>
 
     <ImageView
         android:id="@+id/iv_instagram"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/logo_insta"
-        android:layout_marginStart="30dp"
-        app:layout_constraintStart_toEndOf="@+id/iv_whatsapp"
-        app:layout_constraintTop_toTopOf="@+id/iv_telegram" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_logo_instagram"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/iv_whatsapp" />
+
+    <TextView
+        android:id="@+id/tv_instagram"
+        style="@style/TextView_16sp_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:autoLink="map"
+        android:selectAllOnFocus="true"
+        android:text="Instagram"
+        app:layout_constraintStart_toEndOf="@+id/iv_instagram"
+        app:layout_constraintTop_toTopOf="@+id/iv_instagram"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

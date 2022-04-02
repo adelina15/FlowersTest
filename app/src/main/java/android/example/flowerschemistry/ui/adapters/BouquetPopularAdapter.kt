@@ -3,32 +3,31 @@ package android.example.flowerschemistry.ui.adapters
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardPopularBinding
 import android.example.flowerschemistry.models.BouquetPopular
-import android.example.flowerschemistry.ui.utils.PopularDiffUtil
+import android.example.flowerschemistry.models.BouquetRecommendation
+import android.example.flowerschemistry.models.BouquetSelectionItem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class BouquetPopularAdapter: RecyclerView.Adapter<BouquetPopularAdapter.CardsViewHolder>() {
 
-    private var list = mutableListOf<BouquetPopular>()
+    private var list = mutableListOf<BouquetSelectionItem>()
 
-    fun setList(newList: MutableList<BouquetPopular>){
-        val diffCallback = PopularDiffUtil(list, newList)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        list.clear()
-        list.addAll(newList)
-        diffResult.dispatchUpdatesTo(this)
+    fun setList(newList: MutableList<BouquetSelectionItem>){
+        this.list = newList
+        notifyDataSetChanged()
     }
 
     class CardsViewHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = ItemCardPopularBinding.bind(item)
-        fun bind(card: BouquetPopular) = with(binding){
-            ivBouquetPopular.setImageResource(card.img)
+        fun bind(card: BouquetSelectionItem) = with(binding){
+            Glide.with(itemView.context).load(card.image).into(ivBouquetPopular)
             tvBouquetName.text = card.name
             tvBouquetDescription.text = card.description
-            tvPrice.text = card.price.toString()
+            tvPrice.text = card.cost.toString()
         }
     }
 

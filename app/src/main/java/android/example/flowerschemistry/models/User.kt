@@ -1,6 +1,8 @@
 package android.example.flowerschemistry.models
 
 data class User(
-    val number:String
-    //var name:String
+    val id: Int,
+    val name: String,
+    val phoneNumber: String,
+    val role: String
 )

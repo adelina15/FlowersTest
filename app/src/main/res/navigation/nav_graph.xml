@@ -15,6 +15,15 @@
         <action
             android:id="@+id/action_homeFragment_to_catalogFragment"
             app:destination="@id/catalogFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recommendationFragment"
+            app:destination="@id/recommendationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_popularFragment"
+            app:destination="@id/popularFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_discountsFragment"
+            app:destination="@id/discountsFragment" />
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
@@ -114,8 +123,33 @@
         android:id="@+id/yourOrdersFragment"
         android:name="android.example.flowerschemistry.ui.fragments.YourOrdersFragment"
         android:label="YourOrdersFragment" >
+
         <action
-            android:id="@+id/action_yourOrdersFragment_to_orderDetailFragment"
+            android:id="@+id/action_yourOrdersFragment_to_completedOrdersFragment"
+            app:destination="@id/completedOrdersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendationFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.RecommendationFragment"
+        android:label="fragment_recommendation"
+        tools:layout="@layout/fragment_recommendation" />
+    <fragment
+        android:id="@+id/popularFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.PopularFragment"
+        android:label="fragment_popular"
+        tools:layout="@layout/fragment_popular" />
+    <fragment
+        android:id="@+id/discountsFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.DiscountsFragment"
+        android:label="fragment_discounts"
+        tools:layout="@layout/fragment_discounts" />
+    <fragment
+        android:id="@+id/completedOrdersFragment"
+        android:name="android.example.flowerschemistry.ui.fragments.CompletedOrdersFragment"
+        android:label="fragment_completed_orders"
+        tools:layout="@layout/fragment_completed_orders" >
+        <action
+            android:id="@+id/action_completedOrdersFragment_to_orderDetailFragment"
             app:destination="@id/orderDetailFragment" />
     </fragment>
 </navigation>

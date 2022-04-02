@@ -11,9 +11,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class OrdersCompletedAdapter(var list: ArrayList <YourOrder>, val clickListener: OnItemClickListenerYourOrder)
-    : RecyclerView.Adapter<OrdersCompletedAdapter.OrdersCompletedViewHolder>() {
+class OrdersCompletedAdapter(val clickListener: OnItemClickListenerYourOrder) : RecyclerView.Adapter<OrdersCompletedAdapter.OrdersCompletedViewHolder>() {
 
+    var list = ArrayList <YourOrder>()
     fun setList(newList: MutableList<YourOrder>){
         val diffCallback = CompletedDiffUtil(list, newList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
@@ -31,7 +31,6 @@ class OrdersCompletedAdapter(var list: ArrayList <YourOrder>, val clickListener:
             tvDate.text = item.date
             tvAddress.text = item.address
             tvStatus.text = item.status
-
             itemView.setOnClickListener{
                 action.onItemClick(item)
             }

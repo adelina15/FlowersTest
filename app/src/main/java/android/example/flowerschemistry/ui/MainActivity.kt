@@ -37,6 +37,10 @@ class   MainActivity : AppCompatActivity() {
                 R.id.catalogFragment -> showBottomNav()
                 R.id.favoritesFragment -> showBottomNav()
                 R.id.moreFragment -> showBottomNav()
+                R.id.recommendationFragment -> showBottomNav()
+                R.id.popularFragment -> showBottomNav()
+                R.id.discountsFragment -> showBottomNav()
+                R.id.completedOrdersFragment -> showBottomNav()
                 else -> hideBottomNav()
             }
         }
