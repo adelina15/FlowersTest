@@ -1,8 +1,8 @@
-package android.example.flowerschemistry.models
+package android.example.flowerschemistry.data.models
 
-data class FloristX(
+data class Florist(
     val id: Int,
-    val image: String,
+    val image: Any,
     val name: String,
     val password: String,
     val phoneNumber: String,

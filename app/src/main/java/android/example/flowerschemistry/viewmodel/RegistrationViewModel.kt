@@ -1,11 +1,11 @@
 package android.example.flowerschemistry.viewmodel
 
 
-import android.example.flowerschemistry.repository.Repository
+import android.example.flowerschemistry.data.repository.Repository
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
-class AuthViewModel(private val repository: Repository): ViewModel(), DefaultLifecycleObserver {
+class RegistrationViewModel(private val repository: Repository): ViewModel(), DefaultLifecycleObserver {
 
     val userCreated = MutableLiveData<Boolean>()
     var errorMessage = MutableLiveData<String>()
@@ -22,6 +22,7 @@ class AuthViewModel(private val repository: Repository): ViewModel(), DefaultLif
                     userCreated.postValue(true)
                 }
             else {
+                userCreated.postValue(false)
                 errorMessage.postValue(response.errorBody().toString())
             }
         }

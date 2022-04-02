@@ -2,8 +2,7 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemYourOrderActiveBinding
-import android.example.flowerschemistry.models.YourOrder
-import android.example.flowerschemistry.ui.utils.OnItemClickListenerYourOrder
+import android.example.flowerschemistry.data.models.YourOrder
 import android.example.flowerschemistry.ui.utils.OrdersActiveDiffUtil
 import android.view.LayoutInflater
 import android.view.View

@@ -4,7 +4,7 @@ package android.example.flowerschemistry.ui.fragments
 import android.content.Intent
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentFavoritesBinding
-import android.example.flowerschemistry.models.BouquetCatalog
+import android.example.flowerschemistry.data.models.BouquetCatalog
 import android.example.flowerschemistry.ui.AuthorizationPhoneActivity
 import android.example.flowerschemistry.ui.adapters.FavoritesAdapter
 import android.os.Bundle

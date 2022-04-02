@@ -5,14 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentDiscountsBinding
-import android.example.flowerschemistry.databinding.FragmentHomeBinding
-import android.example.flowerschemistry.databinding.FragmentRecommendationBinding
-import android.example.flowerschemistry.models.BouquetDiscounts
 import android.example.flowerschemistry.ui.adapters.BouquetDiscountsAdapter
 import android.example.flowerschemistry.viewmodel.BouquetDiscountViewModel
-import android.example.flowerschemistry.viewmodel.BouquetPopularViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.android.viewmodel.ext.android.viewModel

@@ -1,4 +1,4 @@
-package android.example.flowerschemistry.models
+package android.example.flowerschemistry.data.models
 
 data class Flower(
     val category: CategoryXX,

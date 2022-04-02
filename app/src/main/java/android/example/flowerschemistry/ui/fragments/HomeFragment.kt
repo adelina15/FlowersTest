@@ -3,15 +3,12 @@ package android.example.flowerschemistry.ui.fragments
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentHomeBinding
-import android.example.flowerschemistry.models.BouquetDiscounts
-import android.example.flowerschemistry.models.BouquetPopular
-import android.example.flowerschemistry.models.BouquetRecommendation
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.example.flowerschemistry.models.Card
+import android.example.flowerschemistry.data.models.Card
 import android.example.flowerschemistry.ui.adapters.*
 import android.example.flowerschemistry.viewmodel.BouquetDiscountViewModel
 import android.example.flowerschemistry.viewmodel.BouquetPopularViewModel

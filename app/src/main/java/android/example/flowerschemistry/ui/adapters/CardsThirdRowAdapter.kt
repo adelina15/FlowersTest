@@ -2,7 +2,7 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardThirdRowBinding
-import android.example.flowerschemistry.models.Card
+import android.example.flowerschemistry.data.models.Card
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

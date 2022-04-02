@@ -1,8 +1,9 @@
-package android.example.flowerschemistry.api
+package android.example.flowerschemistry.data.api
 
-import android.example.flowerschemistry.models.BouquetCatalogItemItem
-import android.example.flowerschemistry.models.BouquetSelectionItem
-import android.example.flowerschemistry.models.User
+import android.example.flowerschemistry.data.models.BouquetCatalogItemItem
+import android.example.flowerschemistry.data.models.BouquetSelectionItem
+import android.example.flowerschemistry.data.models.Token
+import android.example.flowerschemistry.data.models.User
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -20,11 +21,19 @@ interface InterfaceAPI {
     @GET("bouquet/selection?selection=Скидки%2020%25")
     suspend fun getBouquetDiscount(): Response<ArrayList<BouquetSelectionItem>>
 
+    suspend fun checkUserNumber(number: String): Response<Boolean>
+
     @FormUrlEncoded
     @POST("client/create")
     suspend fun createUser(
         @Field("phoneNumber") phoneNumber: String,
         @Field("name") name: String
     ): Response<User>
+
+    @FormUrlEncoded
+    @POST("auth/login/client")
+    suspend fun getToken(
+        @Field("phoneNumber") phoneNumber: String,
+    ): Response<Token>
 
 }

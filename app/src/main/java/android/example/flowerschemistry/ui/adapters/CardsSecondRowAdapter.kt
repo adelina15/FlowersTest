@@ -1,9 +1,8 @@
 package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
-import android.example.flowerschemistry.databinding.ItemCardFirstRowBinding
 import android.example.flowerschemistry.databinding.ItemCardSecondRowBinding
-import android.example.flowerschemistry.models.Card
+import android.example.flowerschemistry.data.models.Card
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

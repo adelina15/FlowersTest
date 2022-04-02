@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.R
-import android.example.flowerschemistry.databinding.FragmentActiveOrdersBinding
 import android.example.flowerschemistry.databinding.FragmentCompletedOrdersBinding
-import android.example.flowerschemistry.models.YourOrder
+import android.example.flowerschemistry.data.models.YourOrder
 import android.example.flowerschemistry.ui.adapters.OrdersCompletedAdapter
 import android.example.flowerschemistry.ui.utils.OnItemClickListenerYourOrder
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 

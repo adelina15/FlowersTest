@@ -2,14 +2,10 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardDiscountsBinding
-import android.example.flowerschemistry.models.BouquetDiscounts
-import android.example.flowerschemistry.models.BouquetPopular
-import android.example.flowerschemistry.models.BouquetSelectionItem
-import android.example.flowerschemistry.ui.utils.DiscountsDiffUtil
+import android.example.flowerschemistry.data.models.BouquetSelectionItem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 

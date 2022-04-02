@@ -1,8 +1,8 @@
 package android.example.flowerschemistry.koin
 
 import android.example.flowerschemistry.Constants
-import android.example.flowerschemistry.api.InterfaceAPI
-import android.example.flowerschemistry.repository.Repository
+import android.example.flowerschemistry.data.api.InterfaceAPI
+import android.example.flowerschemistry.data.repository.Repository
 import android.example.flowerschemistry.viewmodel.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,6 +25,7 @@ val viewModules = module {
     viewModel { BouquetRecommendationViewModel(repository = get()) }
     viewModel { BouquetPopularViewModel(repository = get()) }
     viewModel { BouquetDiscountViewModel(repository = get()) }
+    viewModel { RegistrationViewModel(repository = get()) }
     viewModel { AuthViewModel(repository = get()) }
 }
 

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.FragmentActiveOrdersBinding
-import android.example.flowerschemistry.models.YourOrder
+import android.example.flowerschemistry.data.models.YourOrder
 import android.example.flowerschemistry.ui.adapters.OrdersActiveAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 

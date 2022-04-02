@@ -2,8 +2,7 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardRecommendedBinding
-import android.example.flowerschemistry.models.BouquetRecommendation
-import android.example.flowerschemistry.models.BouquetSelectionItem
+import android.example.flowerschemistry.data.models.BouquetSelectionItem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

@@ -55,6 +55,15 @@
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview1"
         android:layout_width="0dp"
@@ -91,6 +100,15 @@
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/cardview1" />
 
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/tv_phoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phoneNumber" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview2"
         android:layout_width="0dp"
@@ -122,8 +140,8 @@
         style="@style/general_button"
         android:layout_marginTop="45dp"
         android:background="@drawable/button_background_save"
+        android:enabled="true"
         android:text="@string/save"
-        android:enabled="false"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/cardview2" />
@@ -148,6 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="91dp"
+        android:clickable="true"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/delete_profile"
         android:textColor="@color/text_color"

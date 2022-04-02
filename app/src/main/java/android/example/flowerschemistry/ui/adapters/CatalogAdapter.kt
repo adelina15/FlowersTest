@@ -2,7 +2,7 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemCardCatalogBinding
-import android.example.flowerschemistry.models.BouquetCatalogItemItem
+import android.example.flowerschemistry.data.models.BouquetCatalogItemItem
 import android.example.flowerschemistry.ui.utils.OnItemClickListenerCatalog
 import android.view.LayoutInflater
 import android.view.View

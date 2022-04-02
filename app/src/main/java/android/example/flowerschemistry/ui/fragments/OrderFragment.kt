@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.example.flowerschemistry.models.ToOrder
+import android.example.flowerschemistry.data.models.ToOrder
 import android.example.flowerschemistry.ui.adapters.ToOrderAdapter
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController

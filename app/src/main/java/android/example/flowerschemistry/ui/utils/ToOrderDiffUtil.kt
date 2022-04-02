@@ -1,7 +1,7 @@
 package android.example.flowerschemistry.ui.utils
 
 
-import android.example.flowerschemistry.models.ToOrder
+import android.example.flowerschemistry.data.models.ToOrder
 import androidx.recyclerview.widget.DiffUtil
 
 class ToOrderDiffUtil(

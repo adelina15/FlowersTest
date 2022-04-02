@@ -2,7 +2,7 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemYourOrderCompletedBinding
-import android.example.flowerschemistry.models.YourOrder
+import android.example.flowerschemistry.data.models.YourOrder
 import android.example.flowerschemistry.ui.utils.CompletedDiffUtil
 import android.example.flowerschemistry.ui.utils.OnItemClickListenerYourOrder
 import android.view.LayoutInflater

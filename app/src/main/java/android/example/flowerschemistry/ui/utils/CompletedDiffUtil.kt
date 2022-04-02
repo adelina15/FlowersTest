@@ -1,6 +1,6 @@
 package android.example.flowerschemistry.ui.utils
 
-import android.example.flowerschemistry.models.YourOrder
+import android.example.flowerschemistry.data.models.YourOrder
 import androidx.recyclerview.widget.DiffUtil
 
 class CompletedDiffUtil (

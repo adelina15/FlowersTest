@@ -1,14 +1,14 @@
-package android.example.flowerschemistry.models
+package android.example.flowerschemistry.data.models
 
-data class BouquetCatalogItemItem(
-    val category: Category,
+data class BouquetSelectionItem(
+    val category: CategoryX,
     val cost: Int,
     val date: String,
     val dateExp: String,
     val description: String,
-    val filial: Filial,
-    val florist: Florist,
-    val flowers: List<Any>,
+    val filial: FilialX,
+    val florist: FloristX,
+    val flowers: List<Flower>,
     val id: Int,
     val image: String,
     val name: String,

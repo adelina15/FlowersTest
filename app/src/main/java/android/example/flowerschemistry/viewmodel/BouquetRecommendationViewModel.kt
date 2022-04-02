@@ -1,7 +1,7 @@
 package android.example.flowerschemistry.viewmodel
 
-import android.example.flowerschemistry.models.BouquetSelectionItem
-import android.example.flowerschemistry.repository.Repository
+import android.example.flowerschemistry.data.models.BouquetSelectionItem
+import android.example.flowerschemistry.data.repository.Repository
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 

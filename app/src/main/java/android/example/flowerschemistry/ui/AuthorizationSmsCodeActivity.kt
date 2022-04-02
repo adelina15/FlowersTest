@@ -2,15 +2,20 @@ package android.example.flowerschemistry.ui
 
 
 import android.content.Intent
+import android.example.flowerschemistry.data.UserPreferences
 import android.example.flowerschemistry.databinding.ActivityAuthorizationSmscodeBinding
+import android.example.flowerschemistry.viewmodel.AuthViewModel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.auth0.android.jwt.Claim
+import com.auth0.android.jwt.JWT
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
+import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.concurrent.TimeUnit
 
 class AuthorizationSmsCodeActivity : AppCompatActivity() {
@@ -21,12 +26,13 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private val number by lazy { intent.getStringExtra("phoneNumber") }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthorizationSmscodeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
 
         auth=FirebaseAuth.getInstance()
 
@@ -45,7 +51,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 startActivity(Intent(applicationContext, MainActivity::class.java))
                 finish()
-                Log.d("GFG" , "Верификация прошла успешно")
             }
 
             // Вызывается, когда проверка не удалась
@@ -155,4 +160,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+
 }

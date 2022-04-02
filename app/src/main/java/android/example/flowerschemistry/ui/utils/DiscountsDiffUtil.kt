@@ -1,6 +1,6 @@
 package android.example.flowerschemistry.ui.utils
 
-import android.example.flowerschemistry.models.BouquetDiscounts
+import android.example.flowerschemistry.data.models.BouquetDiscounts
 import androidx.recyclerview.widget.DiffUtil
 
 class DiscountsDiffUtil (

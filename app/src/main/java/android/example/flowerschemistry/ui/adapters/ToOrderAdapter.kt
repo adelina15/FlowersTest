@@ -2,7 +2,7 @@ package android.example.flowerschemistry.ui.adapters
 
 import android.example.flowerschemistry.R
 import android.example.flowerschemistry.databinding.ItemToOrderBinding
-import android.example.flowerschemistry.models.ToOrder
+import android.example.flowerschemistry.data.models.ToOrder
 import android.example.flowerschemistry.ui.utils.ToOrderDiffUtil
 import android.view.LayoutInflater
 import android.view.View
