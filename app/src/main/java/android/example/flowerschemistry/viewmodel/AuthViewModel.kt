@@ -14,7 +14,6 @@ class AuthViewModel(private val repository: Repository): ViewModel(), DefaultLif
     val errorMessage = MutableLiveData<String>()
 
 
-
     fun getToken(number: String) {
         viewModelScope.launch {
             val response = repository.getToken(number)

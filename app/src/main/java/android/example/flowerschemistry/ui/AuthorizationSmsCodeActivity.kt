@@ -25,14 +25,17 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
     //lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private val number by lazy { intent.getStringExtra("phoneNumber") }
-
-
+    private val authViewModel by viewModel<AuthViewModel>()
+    lateinit var sharedPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthorizationSmscodeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        sharedPreferences =  UserPreferences(this)
+        Log.i("auth", "on create")
+
 
         auth=FirebaseAuth.getInstance()
 
@@ -49,8 +52,7 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
 
             // Этот метод вызывается после завершения проверки
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
-                finish()
+                Log.i("auth", "on verification complete")
             }
 
             // Вызывается, когда проверка не удалась
@@ -71,17 +73,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
 
         sendVerificationCode()
 
-        /*RetrofitInstance.api.createUser(number!!)
-            .execute(object: Callback<User>{
-                override fun onResponse(call: Call<User>, response: Response<User>) {
-                    Toast.makeText(applicationContext, response.body()!!.number, Toast.LENGTH_LONG).show()
-                }
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                }
-            })*/
-
-
         // заполняем otp и вызывем по нажатии на кнопку
         binding.btnNext.setOnClickListener {
             val otp = binding.pinView.text?.trim().toString()
@@ -93,7 +84,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
                 Toast.makeText(this,"Enter OTP", Toast.LENGTH_SHORT).show()
             }
         }
-
 
         binding.linearLayoutBack.setOnClickListener {
             onBackPressed()
@@ -114,7 +104,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
             .apply {
                 PhoneAuthProvider.verifyPhoneNumber(this)
             }
-
     }
 
     // проверяем, соответствует ли код, отправленный firebase
@@ -123,9 +112,7 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this , MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    number?.let { getToken(it) }
                 } else {
                     // если ошибка входа, отобразится сообщение
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
@@ -136,17 +123,6 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
                 }
             }
     }
-
-    /*private fun resendOTP(activity: Activity, number: String){
-        val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(number) // Phone number to verify
-            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-            .setActivity(activity) // Activity (for callback binding)
-            .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
-            .setForceResendingToken(resendToken!!) // ForceResendingToken from callbacks
-            .build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
-    }*/
 
     // Зпуск таймера чтобы пользователь за 60 сек ввел смс код
     private fun startTimer() {
@@ -159,6 +135,24 @@ class AuthorizationSmsCodeActivity : AppCompatActivity() {
                 binding.tvTimer.text = "Время вышло"
             }
         }.start()
+    }
+
+    private fun getToken(number: String) {
+        authViewModel.getToken(number)
+        authViewModel.token.observe(this){
+            val token: String = it.token
+            val jwt = JWT(token)
+            val name: Claim = jwt.getClaim("name")
+            sharedPreferences.saveToken(token)
+            sharedPreferences.saveUserName(name.asString())
+            sharedPreferences.saveUserNumber(number)
+            startActivity(Intent(applicationContext, MainActivity::class.java))
+            finish()
+        }
+        authViewModel.errorMessage.observe(this){
+            Log.i("auth", "error observe")
+            Toast.makeText(this, "Такого номера нет!!!!!", Toast.LENGTH_SHORT).show()
+        }
     }
 
 

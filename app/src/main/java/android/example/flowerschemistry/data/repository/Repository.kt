@@ -11,7 +11,7 @@ import retrofit2.Response
 class Repository constructor(private val serviceAPI: InterfaceAPI){
 
     suspend fun getBouquetCatalog(): Response<ArrayList<BouquetCatalogItemItem>>{
-        return serviceAPI.getBouquetCatalog()
+        return  serviceAPI.getBouquetCatalog()
     }
 
     suspend fun getBouquetRecommendation(): Response<ArrayList<BouquetSelectionItem>>{
@@ -38,4 +38,19 @@ class Repository constructor(private val serviceAPI: InterfaceAPI){
         return serviceAPI.getToken(number)
     }
 
+}
+
+interface SafeApiCall {
+    suspend fun<T> safeApiCall(apiCall: suspend () -> T) : Resource<T>  {
+        return try {
+            Resource.Success(apiCall.invoke())
+        } catch (e: Throwable) {
+            Resource.Error(e)
+        }
+    }
+}
+
+sealed class Resource<out T>() {
+    data class Success<out T>(val data: T) : Resource<T>()
+    class Error(throwable: Throwable) : Resource<Nothing>()
 }

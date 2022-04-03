@@ -22,15 +22,14 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
     lateinit var storedVerificationId:String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
-    private val authViewModel by viewModel<AuthViewModel>()
-    lateinit var sharedPreferences: UserPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthorizationPhoneBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        sharedPreferences =  UserPreferences(this)
+
 
         binding.btnNext.setOnClickListener {
             login()
@@ -47,28 +46,14 @@ class AuthorizationPhoneActivity : AppCompatActivity() {
         //получить номер телефона из editText
         number = binding.edTextPhone.text.trim().toString()
         if (number.isNotEmpty()){
-            getToken(number)
+            val intent = Intent(this, AuthorizationSmsCodeActivity::class.java)
+            intent.putExtra("phoneNumber", number)
+            startActivity(intent)
+
         }else{
             Toast.makeText(this,"Введите номер телефона", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun getToken(number: String) {
-        authViewModel.getToken(number)
-        authViewModel.token.observe(this){
-            val token: String = it.token
-            val jwt = JWT(token)
-            val name: Claim = jwt.getClaim("name")
-            Log.d("GFG" , "Верификация прошла успешно")
-            sharedPreferences.saveToken(token)
-            sharedPreferences.saveUserName(name.asString())
-            sharedPreferences.saveUserNumber(number)
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-            finish()
 
-        }
-        authViewModel.errorMessage.observe(this){
-            Toast.makeText(this, "Такого номера нет!!!!!", Toast.LENGTH_SHORT).show()
-        }
-    }
 }
